@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Estech Solutions — We Solve Tech Problems</title>
+  
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#0d6efd;
+      --accent-2:#7c3aed;
+      --bg-dark:#0b1220;
+      --muted:#6c757d;
+    }
+    html,body{height:100%;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;scroll-behavior:smooth}
+    a{text-decoration:none}
+
+    /* NAV */
+    .navbar-brand{font-weight:800;letter-spacing:0.6px}
+    .nav-link{font-weight:500;color:rgba(255,255,255,0.9) !important}
+
+    /* HERO / CAROUSEL */
+    .hero-carousel{position:relative;height:92vh;min-height:520px;overflow:hidden}
+    .hero-carousel .slide {
+      position:absolute;inset:0;background-size:cover;background-position:center center;
+      opacity:0;transform:scale(1.03);transition:opacity .9s ease, transform .9s ease;
+      filter:brightness(.55);
+    }
+    .hero-carousel .slide.active{opacity:1;transform:scale(1)}
+    .hero-overlay{
+      position:absolute;inset:0; background:linear-gradient(180deg, rgba(11,18,32,0.35), rgba(11,18,32,0.65));
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative;z-index:3;display:flex;height:100%;align-items:center;
+      justify-content:center;text-align:center;padding:1.5rem;
+    }
+    .hero-title{font-weight:900;color:white; font-size: clamp(2rem, 4vw, 4rem); line-height:1;}
+    .hero-sub{color:rgba(255,255,255,0.9);margin-top:.6rem;font-size:1.05rem}
+    .hero-cta .btn{min-width:170px;padding:0.85rem 1.2rem;font-weight:700;border-radius:.6rem}
+
+    /* Dots */
+    .hero-dots{
+      position:absolute;left:50%;transform:translateX(-50%);bottom:28px;z-index:4;display:flex;gap:10px;
+    }
+    .hero-dots button{
+      width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.35);border:0;outline:0;transition:all .25s;
+      box-shadow:0 4px 14px rgba(0,0,0,.35);
+    }
+    .hero-dots button.active{width:34px;border-radius:20px;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 8px 30px rgba(124,58,237,.25)}
+
+    /* subtle animated underline */
+    .underline-anim{display:inline-block;position:relative}
+    .underline-anim::after{
+      content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-6px;height:4px;width:0; background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      border-radius:4px;transition:width .45s;
+    }
+    .underline-anim:hover::after{width:60%}
+
+    /* Sections styling */
+    section{padding:6rem 0}
+    .section-title{font-weight:800;margin-bottom:1rem}
+    .lead-muted{color:var(--muted);font-size:1.06rem}
+    .card-tilt{transition: transform .35s, box-shadow .35s}
+    .card-tilt:hover{transform: translateY(-10px) rotate(-.25deg); box-shadow: 0 18px 40px rgba(10,10,30,.12)}
+
+    /* Testimonials */
+    .quote{font-style:italic;color:#111;font-weight:600}
+    .testimonial-card{border-radius:12px;padding:1.6rem;background:linear-gradient(180deg,#fff,#f8fbff);box-shadow:0 12px 30px rgba(11,18,32,.06)}
+
+    /* Hire CTA */
+    .hire-cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border-radius:14px;padding:2.2rem;box-shadow:0 18px 40px rgba(13,110,253,.12)}
+    .hire-cta h3{color:white}
+
+    /* Contact form */
+    .form-card{padding:1.6rem;border-radius:12px;background:white;box-shadow:0 12px 30px rgba(11,18,32,.06)}
+
+    /* responsive tweaks */
+    @media (max-width:768px){
+      .hero-dots{bottom:16px}
+      .hero-sub{font-size:0.98rem}
+      section{padding:3.5rem 0}
+    }
+    .hero-inner { animation: fadeInUp 1.2s ease both; }
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+body { opacity: 0; transition: opacity 0.8s ease-in; }
+body.loaded { opacity: 1; }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">ESTECH</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="works.html">Solutions</a></li>
+        <li class="nav-item"><a class="nav-link" href="hire.html">Hire Us</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-sm btn-outline-light ms-2" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO (Manual JS slideshow with dots) -->
+<header class="hero-carousel" id="heroCarousel" aria-hidden="false">
+  <!-- slides: background images -->
+  <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1800&q=80&auto=format&fit=crop');"></div>
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1800&q=80&auto=format&fit=crop');"></div>
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1800&q=80&auto=format&fit=crop');"></div>
+
+  <!-- overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- content -->
+  <div class="hero-inner container">
+    <div class="w-100">
+      <div class="mb-3">
+        <span class="badge bg-white text-dark rounded-pill px-3 py-2" style="font-weight:700;">NEW • Launching Solutions</span>
+      </div>
+      <h1 class="hero-title underline-anim">We Solve Real Tech Problems</h1>
+      <p class="hero-sub mb-4">Custom apps, modern websites, immersive games, and AI solutions — built with craft, speed & ethics.</p>
+      <div class="d-flex justify-content-center gap-3 hero-cta flex-wrap">
+        <a href="works.html" class="btn btn-lg btn-primary">See Our Solutions</a>
+        <a href="hire.html" class="btn btn-lg btn-outline-light" style="background:rgba(255,255,255,0.06);color:white;border-radius:.7rem">Hire Us</a>
+        <a href="contact.html" class="btn btn-lg btn-success">Contact & Chat</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- dots -->
+  <div class="hero-dots" id="heroDots" aria-hidden="false">
+    <button class="active" data-index="0" aria-label="Slide 1"></button>
+    <button data-index="1" aria-label="Slide 2"></button>
+    <button data-index="2" aria-label="Slide 3"></button>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container text-center">
+    <h2 class="section-title">About Estech Solutions</h2>
+    <p class="lead-muted mx-auto" style="max-width:900px">
+      We design and build software that directly solves business and social problems. Our team combines engineering discipline, thoughtful UX,
+      and scalable architecture to turn ideas into usable products — from MVPs and prototypes to production-grade systems.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-light">
+  <div class="container">
+    <h2 class="section-title text-center">What We Do</h2>
+    <div class="row g-4 mt-4">
+      <div class="col-md-4">
+        <div class="card card-tilt p-3 h-100">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=60&auto=format&fit=crop" class="card-img-top rounded mb-3" alt="">
+          <div class="card-body">
+            <h5 class="fw-bold">Web & API Engineering</h5>
+            <p class="text-muted">Secure, fast web platforms and APIs that scale with your business.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-tilt p-3 h-100">
+          <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?w=900&q=60&auto=format&fit=crop" class="card-img-top rounded mb-3" alt="">
+          <div class="card-body">
+            <h5 class="fw-bold">Mobile Apps</h5>
+            <p class="text-muted">Cross-platform or native apps designed for retention and performance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-tilt p-3 h-100">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900&q=60&auto=format&fit=crop" class="card-img-top rounded mb-3" alt="">
+          <div class="card-body">
+            <h5 class="fw-bold">AI & Automation</h5>
+            <p class="text-muted">Intelligent automation and AI-driven features that add measurable value.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS TEASER -->
+<section id="solutions">
+  <div class="container text-center">
+    <h2 class="section-title">We Create Solutions to Tech Problems</h2>
+    <p class="lead-muted mx-auto" style="max-width:880px">Examples: improve conversion, automate manual workflows, create internal tools, build consumer apps, or modernize legacy systems. View full case studies in our Solutions page.</p>
+    <div class="mt-4">
+      <a href="works.html" class="btn btn-primary btn-lg me-2">See Our Solutions</a>
+      <a href="hire.html" class="btn btn-outline-secondary btn-lg">Request a Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="bg-dark text-white">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-md-6">
+        <h3 class="section-title">Why Choose Us?</h3>
+        <ul class="list-unstyled lead-muted">
+          <li class="mb-2">✔ Product-first mindset — we ship features that matter.</li>
+          <li class="mb-2">✔ Transparent pricing & predictable timelines.</li>
+          <li class="mb-2">✔ Dedicated support & long-term partnerships.</li>
+        </ul>
+        <a href="hire.html" class="btn btn-light mt-3">Hire Our Team</a>
+      </div>
+      <div class="col-md-6">
+        <div class="hire-cta">
+          <h3>Start your project</h3>
+          <p class="lead-muted">Tell us the problem — we’ll propose the right solution.</p>
+          <a href="hire.html" class="btn btn-dark btn-lg">Get a Free Proposal</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center">What People Say</h2>
+    <div class="row g-4 mt-4">
+      <div class="col-md-4">
+        <div class="testimonial-card text-center">
+          <p class="quote">“Estech turned our vision into a product faster than expected.”</p>
+          <p class="mb-0"><strong>— Anna R, Founder</strong></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card text-center">
+          <p class="quote">“Clear communication, fast iterations, great results.”</p>
+          <p class="mb-0"><strong>— Mark T, Product Lead</strong></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card text-center">
+          <p class="quote">“Our conversion doubled after their redesign.”</p>
+          <p class="mb-0"><strong>— Sarah K, eCommerce</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT (small form on homepage) -->
+<section id="contact" class="bg-light">
+  <div class="container">
+    <h2 class="section-title text-center">Contact & Send a Quick Message</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <!-- replace `YOUR_FORMSPREE_ID` with your Formspree ID to receive emails -->
+        <form class="form-card" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input name="name" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="col-md-6">
+              <input name="email" type="email" class="form-control" placeholder="Your email" required>
+            </div>
+            <div class="col-12">
+              <input name="subject" class="form-control" placeholder="Subject (e.g., Project, Job, Support)">
+            </div>
+            <div class="col-12">
+              <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your project or problem" required></textarea>
+            </div>
+            <div class="col-12 text-center">
+              <button class="btn btn-primary btn-lg" type="submit">Send Message</button>
+            </div>
+          </div>
+        </form>
+        <p class="text-center mt-3 text-muted small">Prefer live chat or AI assistance? Visit <a href="contact.html">Contact</a> for our assistant and extended options.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-4">
+  <div class="container">
+    <p class="mb-1">&copy; <span id="year"></span> Estech Solutions. All rights reserved.</p>
+    <p class="small text-muted">Follow us: <a href="#" class="link-primary">LinkedIn</a> • <a href="#" class="link-primary">Twitter</a></p>
+  </div>
+</footer>
+
+<!-- Bootstrap & JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // set year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Custom slideshow logic (auto fade + dots) — nicer control than default
+  (function(){
+    const slides = Array.from(document.querySelectorAll('.hero-carousel .slide'));
+    const dots = Array.from(document.querySelectorAll('#heroDots button'));
+    let idx = 0;
+    let timer = null;
+    const interval = 5000; // 5s
+
+    function goTo(i){
+      slides.forEach((s, k) => s.classList.toggle('active', k===i));
+      dots.forEach((d, k) => d.classList.toggle('active', k===i));
+      idx = i;
+    }
+
+    function next(){
+      goTo((idx+1) % slides.length);
+    }
+
+    // wire dots
+    dots.forEach(btn => btn.addEventListener('click', e => {
+      const i = parseInt(btn.getAttribute('data-index'));
+      goTo(i);
+      restart();
+    }));
+
+    // autoplay
+    function start(){ timer = setInterval(next, interval); }
+    function stop(){ clearInterval(timer); timer = null; }
+    function restart(){ stop(); start(); }
+
+    // pause on hover
+    const hero = document.getElementById('heroCarousel');
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', start);
+
+    window.addEventListener("load", () => document.body.classList.add("loaded"));
+
+
+    // init
+    goTo(0);
+    start();
+  })();
+</script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "9f5e956e-7020-4eb9-9d68-ab65ef7dc748",
+    });
+  });
+</script>
+</body>
+</html>

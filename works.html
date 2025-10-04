@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Our Works — Estech Solutions</title>
+
+  <!-- Bootstrap + Google Font -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Estech-solution/bootstrap-5.3.6-dist/js/bootstrap.bundle.js">
+    <link rel="stylesheet" href="../Estech-solution/bootstrap-5.3.6-dist/css/bootstrap.css">
+
+  <style>
+    :root{
+      --accent:#0d6efd;
+      --accent-2:#7c3aed;
+      --bg:#f6f8fb;
+      --muted:#6c757d;
+    }
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial; background:var(--bg); color:#0b1220; scroll-behavior:smooth}
+    a{text-decoration:none}
+
+    /* NAV clone style */
+    .navbar-brand{font-weight:800;letter-spacing:.6px}
+    .nav-link{font-weight:600;color:rgba(0,0,0,.75) !important}
+
+    /* Page hero */
+    .works-hero{background:linear-gradient(180deg,rgba(13,17,24,0.02),rgba(13,17,24,0.03));padding:5.5rem 0 3rem}
+    .works-hero h1{font-weight:900;margin-bottom:.4rem}
+    .works-hero p.lead{color:var(--muted)}
+
+    /* Filters */
+    .filters{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+    .chip{border-radius:999px;padding:.45rem .9rem;font-weight:700;border:1px solid rgba(11,18,32,.06);background:white;cursor:pointer;transition:transform .18s,box-shadow .18s}
+    .chip.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 12px 30px rgba(13,110,253,.12);transform:translateY(-4px)}
+
+    /* Search */
+    .search-wrap .form-control{border-radius:999px;padding: .9rem 1.1rem}
+
+    /* Grid */
+    .projects-grid{margin-top:1.5rem}
+    .project-card{border-radius:12px;overflow:hidden;background:white;box-shadow:0 10px 30px rgba(11,18,32,.06);transition:transform .28s,box-shadow .28s}
+    .project-card:hover{transform:translateY(-10px);box-shadow:0 22px 50px rgba(11,18,32,.09)}
+    .project-media{height:200px;object-fit:cover;width:100%;display:block}
+    .tag{font-size:.78rem;padding:.25rem .55rem;border-radius:999px;background:rgba(11,18,32,.04);font-weight:700}
+
+    /* Buttons */
+    .btn-outline-accent{border-color:var(--accent);color:var(--accent);font-weight:700}
+    .btn-outline-accent:hover{background:var(--accent);color:white}
+
+    /* Modal */
+    .modal-lg{max-width:960px}
+    .case-img{width:100%;height:420px;object-fit:cover;border-radius:8px;margin-bottom:1rem}
+
+    /* Load more */
+    .load-more{margin-top:1.5rem}
+
+    @media (max-width:768px){
+      .project-media{height:170px}
+      .case-img{height:260px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">ESTECH</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu2">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="works.html">Solutions</a></li>
+        <li class="nav-item"><a class="nav-link" href="hire.html">Hire Us</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-sm btn-outline-primary ms-2" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="works-hero text-center">
+  <div class="container">
+    <h1>Our Solutions & Case Studies</h1>
+    <p class="lead">Real projects solving real problems — explore examples across Web, Mobile, AI and Game development.</p>
+
+    <div class="row gy-3 justify-content-center mt-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="search-wrap">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#6c757d" viewBox="0 0 24 24"><path d="M21.71 20.29l-5.4-5.4A7.92 7.92 0 0018 10a8 8 0 10-8 8 7.92 7.92 0 004.89-1.69l5.4 5.4a1 1 0 001.42-1.42zM4 10a6 6 0 116 6 6 6 0 01-6-6z"></path></svg></span>
+            <input id="searchInput" type="text" class="form-control border-start-0" placeholder="Search projects, e.g. e-commerce, dashboard..." aria-label="Search projects">
+            <button id="searchClear" class="btn btn-outline-secondary" title="Clear">✕</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 text-center mt-3">
+        <div class="filters" id="filters">
+          <div class="chip active" data-filter="all">All</div>
+          <div class="chip" data-filter="web">Web</div>
+          <div class="chip" data-filter="mobile">Mobile</div>
+          <div class="chip" data-filter="game">Game</div>
+          <div class="chip" data-filter="ai">AI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PROJECTS GRID -->
+<section class="py-5">
+  <div class="container">
+    <div id="projectsGrid" class="row g-4 projects-grid">
+
+      <!-- Project card (repeat for each project) -->
+      <div class="col-md-6 col-lg-4 project-item" data-cats="web" data-title="E-commerce Platform" data-desc="A fast checkout and analytics platform for SMBs.">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1200&q=60&auto=format&fit=crop" alt="E-commerce Platform" class="project-media">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">E-commerce Platform</h5>
+              <span class="tag">Web</span>
+            </div>
+            <p class="text-muted small mb-3">Fast checkout, inventory sync, and built-in analytics for growing stores.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-accent btn-sm view-btn" data-title="E-commerce Platform" data-img="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1200&q=60&auto=format&fit=crop" data-desc="We built a commerce platform with fast checkout, inventory sync, seller dashboards and analytics. Integrated payments and A/B testing for product pages." data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-cats="mobile" data-title="Student Management App" data-desc="Attendance, grades and messaging for schools.">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1504691342899-8d6d2e6d255d?w=1200&q=60&auto=format&fit=crop" alt="Student App" class="project-media">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">School Management App</h5>
+              <span class="tag">Mobile</span>
+            </div>
+            <p class="text-muted small mb-3">Simplifies attendance, grading and parent communication.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-accent btn-sm view-btn" data-title="School Management App" data-img="https://images.unsplash.com/photo-1504691342899-8d6d2e6d255d?w=1200&q=60&auto=format&fit=crop" data-desc="An app that helps teachers track attendance, manage grades & communicate with parents in a secure environment." data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-cats="ai" data-title="AI Chat Support" data-desc="AI assistant for customer support and ticketing.">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1581091870622-82f9b2cbe1e5?w=1200&q=60&auto=format&fit=crop" alt="AI Support" class="project-media">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">AI Support Assistant</h5>
+              <span class="tag">AI</span>
+            </div>
+            <p class="text-muted small mb-3">Automates answers, creates tickets and routes urgent issues to staff.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-accent btn-sm view-btn" data-title="AI Support Assistant" data-img="https://images.unsplash.com/photo-1581091870622-82f9b2cbe1e5?w=1200&q=60&auto=format&fit=crop" data-desc="AI chatbot integrated with helpdesk and CRM. Reduced response time by 60%." data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-cats="web" data-title="Booking Dashboard" data-desc="B2B booking and scheduling system.">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=60&auto=format&fit=crop" alt="Booking Dashboard" class="project-media">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">Booking Dashboard</h5>
+              <span class="tag">Web</span>
+            </div>
+            <p class="text-muted small mb-3">Scheduling, availability, and integrated payments for service providers.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-accent btn-sm view-btn" data-title="Booking Dashboard" data-img="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=60&auto=format&fit=crop" data-desc="B2B dashboard with calendar sync and payment processing." data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-cats="game" data-title="Educational Game" data-desc="An interactive learning game for kids.">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1548092372-8b7b0e7bfa4b?w=1200&q=60&auto=format&fit=crop" alt="Educational Game" class="project-media">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">Educational Game</h5>
+              <span class="tag">Game</span>
+            </div>
+            <p class="text-muted small mb-3">Engaging game with rewards and progress tracking for young learners.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-accent btn-sm view-btn" data-title="Educational Game" data-img="https://images.unsplash.com/photo-1548092372-8b7b0e7bfa4b?w=1200&q=60&auto=format&fit=crop" data-desc="Interactive educational game with analytics dashboard for teachers." data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more project cards as needed -->
+    </div>
+
+    <!-- load more placeholder (can be wired to fetch more items) -->
+    <div class="text-center load-more">
+      <button id="loadMoreBtn" class="btn btn-outline-secondary">Load more projects</button>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY MODAL -->
+<div class="modal fade" id="caseModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-4">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <h4 id="caseTitle" class="mb-0"></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <img id="caseImg" class="case-img" src="" alt="">
+        <p id="caseDesc" class="text-muted"></p>
+        <div class="d-flex gap-2 mt-3">
+          <a id="caseLink" href="#" target="_blank" class="btn btn-primary">Visit Project</a>
+          <a href="hire.html" class="btn btn-outline-dark ms-auto">Hire Our Team</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="py-4 text-center">
+  <div class="container">
+    <p class="mb-1">&copy; <span id="year2"></span> Estech Solutions</p>
+    <p class="small text-muted">Want this design? <a href="hire.html">Hire us</a> — we build custom sites & apps.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year2').textContent = new Date().getFullYear();
+
+  // Filters logic
+  const chips = Array.from(document.querySelectorAll('.chip'));
+  const items = Array.from(document.querySelectorAll('.project-item'));
+  const searchInput = document.getElementById('searchInput');
+  const clearBtn = document.getElementById('searchClear');
+
+  function applyFilter(filter = 'all', q = '') {
+    const qLower = q.trim().toLowerCase();
+    items.forEach(it => {
+      const cats = it.getAttribute('data-cats') || '';
+      const title = (it.getAttribute('data-title') || '').toLowerCase();
+      const desc = (it.getAttribute('data-desc') || '').toLowerCase();
+      const matchesCat = filter === 'all' ? true : cats.split(',').includes(filter);
+      const matchesQuery = qLower === '' ? true : (title.includes(qLower) || desc.includes(qLower));
+      it.style.display = (matchesCat && matchesQuery) ? '' : 'none';
+    });
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const f = chip.getAttribute('data-filter');
+      applyFilter(f, searchInput.value);
+    });
+  });
+
+  searchInput.addEventListener('input', () => {
+    const active = document.querySelector('.chip.active').getAttribute('data-filter');
+    applyFilter(active, searchInput.value);
+  });
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    applyFilter(document.querySelector('.chip.active').getAttribute('data-filter'), '');
+  });
+
+  // Modal viewer wiring
+  const viewBtns = Array.from(document.querySelectorAll('.view-btn'));
+  const caseModalEl = document.getElementById('caseModal');
+  const caseTitle = document.getElementById('caseTitle');
+  const caseImg = document.getElementById('caseImg');
+  const caseDesc = document.getElementById('caseDesc');
+  const caseLink = document.getElementById('caseLink');
+  const bsModal = new bootstrap.Modal(caseModalEl);
+
+  viewBtns.forEach(btn => btn.addEventListener('click', () => {
+    const title = btn.getAttribute('data-title');
+    const img = btn.getAttribute('data-img');
+    const desc = btn.getAttribute('data-desc');
+    const link = btn.getAttribute('data-link');
+    caseTitle.textContent = title;
+    caseImg.src = img;
+    caseImg.alt = title;
+    caseDesc.textContent = desc;
+    caseLink.href = link || '#';
+    bsModal.show();
+  }));
+
+  // Load more (demo: simply clones existing cards; replace with real fetch)
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  loadMoreBtn.addEventListener('click', () => {
+    const grid = document.getElementById('projectsGrid');
+    // simple demo: clone first 3 items (in real site you would fetch more from server)
+    const clones = Array.from(grid.querySelectorAll('.project-item')).slice(0,3).map(el => el.cloneNode(true));
+    clones.forEach(clone => grid.appendChild(clone));
+    // re-wire view buttons of clones
+    Array.from(grid.querySelectorAll('.view-btn')).forEach(btn => {
+      btn.removeEventListener('click', () => {});
+      btn.addEventListener('click', () => {
+        const title = btn.getAttribute('data-title');
+        const img = btn.getAttribute('data-img');
+        const desc = btn.getAttribute('data-desc');
+        const link = btn.getAttribute('data-link');
+        caseTitle.textContent = title;
+        caseImg.src = img;
+        caseImg.alt = title;
+        caseDesc.textContent = desc;
+        caseLink.href = link || '#';
+        bsModal.show();
+      });
+    });
+  });
+
+  // Initialize show all
+  applyFilter('all', '');
+</script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "9f5e956e-7020-4eb9-9d68-ab65ef7dc748",
+    });
+  });
+</script>
+</body>
+</html>

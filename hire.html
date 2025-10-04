@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hire Us — Estech Solutions</title>
+
+  <!-- Bootstrap + Google Font -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Estech-solution/bootstrap-5.3.6-dist/js/bootstrap.bundle.js">
+    <link rel="stylesheet" href="../Estech-solution/bootstrap-5.3.6-dist/css/bootstrap.css">
+
+  <style>
+    :root{
+      --accent:#0d6efd;
+      --accent-2:#7c3aed;
+      --bg:#f6f8fb;
+      --muted:#6c757d;
+    }
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:#0b1220;scroll-behavior:smooth}
+    .navbar-brand{font-weight:800;letter-spacing:.6px}
+    .nav-link{font-weight:600;color:rgba(0,0,0,.75) !important}
+    .page-hero{padding:4.5rem 0;background:linear-gradient(180deg,rgba(13,17,24,0.02),rgba(13,17,24,0.03));text-align:center}
+    .section-title{font-weight:800;margin-bottom:.5rem}
+    .lead-muted{color:var(--muted)}
+    .form-card{background:white;padding:1.6rem;border-radius:12px;box-shadow:0 12px 30px rgba(11,18,32,.06)}
+    .btn-accent{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:0;color:#fff}
+    .pricing .card{border-radius:12px;box-shadow:0 12px 30px rgba(11,18,32,.06)}
+    .small-muted{color:var(--muted);font-size:.95rem}
+    .file-note{font-size:.85rem;color:var(--muted)}
+    .success-box{background:linear-gradient(180deg,#e6fffb,#f0fff9);border-left:4px solid #0d6efd;padding:1rem;border-radius:8px}
+    @media (max-width:768px){ .page-hero{padding:3rem 0} }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">ESTECH</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHire">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navHire">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="works.html">Solutions</a></li>
+        <li class="nav-item"><a class="nav-link active" href="hire.html">Hire Us</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-sm btn-outline-primary ms-2" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="page-hero">
+  <div class="container">
+    <h1 class="section-title">Hire Estech — Build something remarkable</h1>
+    <p class="lead-muted mx-auto" style="max-width:880px">Tell us about your challenge — whether it’s an app, website, game, or AI automation, we’ll propose a focused solution and timeline.</p>
+
+    <div class="mt-4 d-flex justify-content-center gap-2 flex-wrap">
+      <a class="btn btn-accent btn-lg" href="#hireForm">Request a Quote</a>
+      <a class="btn btn-outline-secondary btn-lg" href="works.html">See Our Solutions</a>
+      <!-- AI link: opens contact page where the AI chat lives -->
+      <a class="btn btn-outline-success btn-lg" href="contact.html#chat" target="_blank">Ask Our AI Assistant</a>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="container my-5">
+
+  <div class="row g-4">
+    <!-- Form Column -->
+    <div class="col-lg-7">
+      <div id="hireForm" class="form-card">
+
+        <h3 class="mb-3">Project Request</h3>
+        <p class="small-muted mb-3">Complete the form below and we’ll get back within 24–48 hours with a tailored proposal.</p>
+
+        <!-- Replace YOUR_FORMSPREE_ID with your Formspree ID before publishing -->
+        <form id="requestForm" enctype="multipart/form-data">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Full name</label>
+              <input required name="name" type="text" class="form-control" placeholder="Jane Doe">
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input required name="email" type="email" class="form-control" placeholder="hello@company.com">
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Company (optional)</label>
+              <input name="company" type="text" class="form-control" placeholder="Company name">
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Project Type</label>
+              <select id="projectType" name="projectType" class="form-select" required>
+                <option value="web">Web application / website</option>
+                <option value="mobile">Mobile app</option>
+                <option value="game">Game</option>
+                <option value="ai">AI / Automation</option>
+                <option value="other">Other (specify)</option>
+              </select>
+            </div>
+
+            <div id="otherTypeWrap" class="col-md-6" style="display:none">
+              <label class="form-label">Please specify</label>
+              <input id="otherType" name="otherType" class="form-control" placeholder="Describe project type">
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Estimated budget</label>
+              <select id="budget" name="budget" class="form-select">
+                <option value="">Prefer not to say</option>
+                <option value="$500-$2k">$500 – $2,000</option>
+                <option value="$2k-$10k">$2,000 – $10,000</option>
+                <option value="$10k+">$10,000+</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Desired timeline</label>
+              <select id="timeline" name="timeline" class="form-select">
+                <option>As soon as possible</option>
+                <option>1–3 months</option>
+                <option>3–6 months</option>
+                <option>6+ months</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Project summary</label>
+              <textarea required name="message" class="form-control" rows="5" placeholder="Describe the problem, goals, users, and any existing systems."></textarea>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Attach files (optional)</label>
+              <input id="fileInput" name="attachment" type="file" accept=".png,.jpg,.jpeg,.pdf,.zip,.svg" class="form-control">
+              <div class="file-note mt-1">Accepted: images, PDF, zip (max 10MB). For large files, share a Drive/Dropbox link in the message above.</div>
+            </div>
+
+            <div class="col-12 text-center">
+              <button id="submitBtn" class="btn btn-accent btn-lg" type="submit">Send Request</button>
+            </div>
+          </div>
+        </form>
+
+        <div id="formFeedback" class="mt-3" style="display:none"></div>
+      </div>
+    </div>
+
+    <!-- Right Column: Pricing & Quick CTA -->
+    <div class="col-lg-5">
+      <div class="mb-4">
+        <h5 class="section-title">Quick Packages</h5>
+        <p class="small-muted">Not sure where to start? Pick a package or request a custom quote.</p>
+      </div>
+
+      <div class="pricing d-grid gap-3">
+        <div class="card p-3">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h5 class="fw-bold mb-1">Basic</h5>
+              <div class="small-muted">Landing page, contact form, basic SEO</div>
+            </div>
+            <div class="text-end">
+              <div class="h4 mb-0">$499</div>
+              <div class="small-muted">one-time</div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <a href="#hireForm" class="btn btn-outline-accent w-100">Choose Basic</a>
+          </div>
+        </div>
+
+        <div class="card p-3">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h5 class="fw-bold mb-1">Pro</h5>
+              <div class="small-muted">Full website/app, analytics, integrations</div>
+            </div>
+            <div class="text-end">
+              <div class="h4 mb-0">$1,999</div>
+              <div class="small-muted">starting</div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <a href="#hireForm" class="btn btn-outline-accent w-100">Choose Pro</a>
+          </div>
+        </div>
+
+        <div class="card p-3">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h5 class="fw-bold mb-1">Premium</h5>
+              <div class="small-muted">Custom product build, SLA & ongoing support</div>
+            </div>
+            <div class="text-end">
+              <div class="h4 mb-0">$4,999+</div>
+              <div class="small-muted">custom</div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <a href="#hireForm" class="btn btn-outline-accent w-100">Request Premium</a>
+          </div>
+        </div>
+
+        <div class="card p-3 text-center">
+          <h6 class="fw-bold mb-2">Need help scoping?</h6>
+          <p class="small-muted mb-3">Try our AI assistant for quick scoping and cost estimates.</p>
+          <a class="btn btn-success w-100" href="contact.html#chat" target="_blank">Open AI Assistant</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="py-4 text-center">
+  <div class="container">
+    <p class="mb-1">&copy; <span id="year3"></span> Estech Solutions</p>
+    <p class="small text-muted">By submitting you agree we may contact you about your request.</p>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year3').textContent = new Date().getFullYear();
+
+  // show/hide "other" type field
+  const projectType = document.getElementById('projectType');
+  const otherWrap = document.getElementById('otherTypeWrap');
+  projectType.addEventListener('change', () => {
+    if(projectType.value === 'other') otherWrap.style.display = '';
+    else { otherWrap.style.display = 'none'; document.getElementById('otherType').value = ''; }
+  });
+
+  // Form submission via Formspree (AJAX)
+  const form = document.getElementById('requestForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const feedback = document.getElementById('formFeedback');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // disable
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    feedback.style.display = 'none';
+
+    // build FormData
+    const fd = new FormData();
+    const fields = ['name','email','company','projectType','otherType','budget','timeline','message'];
+    fields.forEach(k => {
+      const el = form.querySelector(`[name="${k}"]`);
+      if(el && el.value) fd.append(k, el.value);
+    });
+
+    // append file if selected
+    const f = document.getElementById('fileInput').files[0];
+    if(f) fd.append('attachment', f);
+
+    try {
+      // IMPORTANT: replace YOUR_FORMSPREE_ID with your real Formspree form ID
+      const endpoint = 'https://formspree.io/f/mdkwzzal';
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        body: fd,
+        headers: {
+          // do NOT set Content-Type when sending FormData; browser sets it (with boundary)
+          'Accept': 'application/json'
+        }
+      });
+
+      if(res.ok) {
+        // success
+        feedback.style.display = '';
+        feedback.innerHTML = '<div class="success-box"><strong>Thanks — request received.</strong><div class="mt-2 small-muted">We will review and email you within 24–48 hours. Check your spam if you don’t see a reply.</div></div>';
+        form.reset();
+        otherWrap.style.display = 'none';
+      } else {
+        const data = await res.json();
+        let msg = 'Failed to send request. Please try again later.';
+        if(data && data.errors) msg = data.errors.map(e => e.message).join(', ');
+        feedback.style.display = '';
+        feedback.innerHTML = `<div class="alert alert-danger">${msg}</div>`;
+      }
+    } catch (err) {
+      feedback.style.display = '';
+      feedback.innerHTML = `<div class="alert alert-danger">Network error — check your connection and try again.</div>`;
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Request';
+    }
+  });
+</script>
+</body>
+</html>
