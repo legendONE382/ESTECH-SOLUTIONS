@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Prevent search engines from indexing system or temporary files
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /temp/
+
+# Point to your sitemap
+Sitemap: https://estechsolutions.vercel.app/sitemap.xml
