@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="UTF-8" />
-    <link rel="canonical" href="https://estechsolutions.vercel.app/" />
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
-
+  <link rel="canonical" href="https://estechsolutions.vercel.app/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Works – Estech Solutions | Innovative Digital Projects</title>
   <meta name="description" content="Explore Estech Solutions' portfolio of cutting-edge web, app, and AI projects designed to help businesses thrive in the digital era." />
   <meta name="keywords" content="Estech Solutions projects, Estech portfolio, web apps, AI development, tech innovation" />
   <meta name="author" content="Estech Solutions" />
 
-  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://estechsolutions.vercel.app/works" />
   <meta property="og:title" content="Our Works – Estech Solutions" />
@@ -26,17 +25,16 @@
   <meta name="twitter:image" content="https://estechsolutions.vercel.app/images/og-preview.jpg" />
 
   <!-- Analytics & Pixel (same as home) -->
-    <meta name="google-site-verification" content="xbSDnvWUpVwwPQIOFKmeJu-5jykqXZ5RTL8RRe88FfE" />
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2CSM88HT3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="google-site-verification" content="xbSDnvWUpVwwPQIOFKmeJu-5jykqXZ5RTL8RRe88FfE" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2CSM88HT3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P2CSM88HT3');
+  </script>
 
-  gtag('config', 'G-P2CSM88HT3');
-</script>
-    <script>
+  <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -56,20 +54,13 @@
   <script>
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function() {OneSignal.init({
-  appId: "9f5e956e-7020-4eb9-9d68-ab65ef7dc748",
-});
-
-      });
-    });
+      appId: "9f5e956e-7020-4eb9-9d68-ab65ef7dc748",
+    }); });
   </script>
-</head>
 
-
-  <!-- Bootstrap + Google Font -->
+  <!-- Bootstrap + Font -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../Estech-solution/bootstrap-5.3.6-dist/js/bootstrap.bundle.js">
-    <link rel="stylesheet" href="../Estech-solution/bootstrap-5.3.6-dist/css/bootstrap.css">
 
   <style>
     :root{
@@ -97,6 +88,7 @@
 
     /* Search */
     .search-wrap .form-control{border-radius:999px;padding: .9rem 1.1rem}
+    .input-group-text svg{display:block}
 
     /* Grid */
     .projects-grid{margin-top:1.5rem}
@@ -120,6 +112,33 @@
       .project-media{height:170px}
       .case-img{height:260px}
     }
+
+    /* hover scale (visual cards) */
+    .hover-scale {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    .project-card {
+      background-color: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #f0f0f0;
+    }
+    .project-media { border-bottom: 3px solid #0d6efd; }
+
+    /* scroll animations */
+    .fade-in-up { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; will-change: opacity, transform; }
+    .fade-in-up.in-view { opacity: 1; transform: translateY(0); }
+
+    /* subtle stagger for child elements */
+    .project-card .p-4 > * { transition: opacity .4s ease .15s, transform .4s ease .15s; opacity: 0; transform: translateY(8px); }
+    .project-card.in-view .p-4 > * { opacity: 1; transform: translateY(0); transition-delay: 0s; }
+
+    footer { background: transparent; }
+
   </style>
 </head>
 <body>
@@ -177,97 +196,124 @@
   <div class="container">
     <div id="projectsGrid" class="row g-4 projects-grid">
 
-      <!-- Project card (repeat for each project) -->
-      <div class="col-md-6 col-lg-4 project-item" data-cats="web" data-title="E-commerce Platform" data-desc="A fast checkout and analytics platform for SMBs.">
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1200&q=60&auto=format&fit=crop" alt="E-commerce Platform" class="project-media">
-          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h5 class="mb-0">E-commerce Platform</h5>
-              <span class="tag">Web</span>
-            </div>
-            <p class="text-muted small mb-3">Fast checkout, inventory sync, and built-in analytics for growing stores.</p>
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-accent btn-sm view-btn" data-title="E-commerce Platform" data-img="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1200&q=60&auto=format&fit=crop" data-desc="We built a commerce platform with fast checkout, inventory sync, seller dashboards and analytics. Integrated payments and A/B testing for product pages." data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 project-item" data-cats="mobile" data-title="Student Management App" data-desc="Attendance, grades and messaging for schools.">
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1504691342899-8d6d2e6d255d?w=1200&q=60&auto=format&fit=crop" alt="Student App" class="project-media">
-          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h5 class="mb-0">School Management App</h5>
-              <span class="tag">Mobile</span>
-            </div>
-            <p class="text-muted small mb-3">Simplifies attendance, grading and parent communication.</p>
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-accent btn-sm view-btn" data-title="School Management App" data-img="https://images.unsplash.com/photo-1504691342899-8d6d2e6d255d?w=1200&q=60&auto=format&fit=crop" data-desc="An app that helps teachers track attendance, manage grades & communicate with parents in a secure environment." data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+      <!-- Market Research Summarizer (AI App) -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ai" data-title="Market Research Summarizer" data-desc="AI-powered app for analyzing market trends, competitors, and customer feedback.">
+        <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
+          <img src="https://cdn.pixabay.com/photo/2018/01/15/07/51/artificial-intelligence-3082266_1280.jpg" alt="Market Research AI" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <div class="p-4">
+            <h5 class="fw-bold mb-1">Market Research Summarizer</h5>
+            <p class="text-muted small mb-3">Transforms complex market data and customer reviews into concise, actionable summaries and competitor insights.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                      data-title="Market Research Summarizer"
+                      data-img="https://cdn.pixabay.com/photo/2018/01/15/07/51/artificial-intelligence-3082266_1280.jpg"
+                      data-desc="A custom AI app that summarizes reports, reviews and trends into short executive summaries, competitor snapshots and growth recommendations."
+                      data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-4 project-item" data-cats="ai" data-title="AI Chat Support" data-desc="AI assistant for customer support and ticketing.">
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1581091870622-82f9b2cbe1e5?w=1200&q=60&auto=format&fit=crop" alt="AI Support" class="project-media">
-          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h5 class="mb-0">AI Support Assistant</h5>
-              <span class="tag">AI</span>
-            </div>
-            <p class="text-muted small mb-3">Automates answers, creates tickets and routes urgent issues to staff.</p>
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-accent btn-sm view-btn" data-title="AI Support Assistant" data-img="https://images.unsplash.com/photo-1581091870622-82f9b2cbe1e5?w=1200&q=60&auto=format&fit=crop" data-desc="AI chatbot integrated with helpdesk and CRM. Reduced response time by 60%." data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 project-item" data-cats="web" data-title="Booking Dashboard" data-desc="B2B booking and scheduling system.">
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=60&auto=format&fit=crop" alt="Booking Dashboard" class="project-media">
-          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h5 class="mb-0">Booking Dashboard</h5>
-              <span class="tag">Web</span>
-            </div>
-            <p class="text-muted small mb-3">Scheduling, availability, and integrated payments for service providers.</p>
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-accent btn-sm view-btn" data-title="Booking Dashboard" data-img="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=60&auto=format&fit=crop" data-desc="B2B dashboard with calendar sync and payment processing." data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+      <!-- Event Management -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="web" data-title="Event Management Platform" data-desc="Web app for booking, promoting, and managing events easily.">
+        <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
+          <img src="https://cdn.pixabay.com/photo/2016/10/29/08/33/audience-1776755_1280.jpg" alt="Event Platform" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <div class="p-4">
+            <h5 class="fw-bold mb-1">Event Management Platform</h5>
+            <p class="text-muted small mb-3">Ticketing, promotions, and analytics — built to handle both intimate workshops and large public events.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                      data-title="Event Management Platform"
+                      data-img="https://cdn.pixabay.com/photo/2016/10/29/08/33/audience-1776755_1280.jpg"
+                      data-desc="A responsive event platform with ticketing, payment integration, automated reminders and attendance analytics."
+                      data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-4 project-item" data-cats="game" data-title="Educational Game" data-desc="An interactive learning game for kids.">
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1548092372-8b7b0e7bfa4b?w=1200&q=60&auto=format&fit=crop" alt="Educational Game" class="project-media">
-          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h5 class="mb-0">Educational Game</h5>
-              <span class="tag">Game</span>
-            </div>
-            <p class="text-muted small mb-3">Engaging game with rewards and progress tracking for young learners.</p>
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-accent btn-sm view-btn" data-title="Educational Game" data-img="https://images.unsplash.com/photo-1548092372-8b7b0e7bfa4b?w=1200&q=60&auto=format&fit=crop" data-desc="Interactive educational game with analytics dashboard for teachers." data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+      <!-- AI Support Assistant -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ai" data-title="AI Support Assistant" data-desc="Smart virtual agent that automates replies and improves customer experience.">
+        <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
+          <img src="https://cdn.pixabay.com/photo/2018/05/08/08/57/chatbot-3389624_1280.jpg" alt="AI Support Assistant" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <div class="p-4">
+            <h5 class="fw-bold mb-1">AI Support Assistant</h5>
+            <p class="text-muted small mb-3">Context-aware chatbot integration that reduces response time and escalates complex issues to staff.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                      data-title="AI Support Assistant"
+                      data-img="https://cdn.pixabay.com/photo/2018/05/08/08/57/chatbot-3389624_1280.jpg"
+                      data-desc="Chatbot connected to CRM and ticketing to automate support, create tickets, and hand off to humans when needed."
+                      data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Add more project cards as needed -->
+      <!-- Digital Product Store -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="web" data-title="Digital Product Store Builder" data-desc="Empowers creators to sell digital goods with secure payments.">
+        <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
+          <img src="https://cdn.pixabay.com/photo/2017/06/29/00/58/online-store-2452808_1280.jpg" alt="Digital Store Builder" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <div class="p-4">
+            <h5 class="fw-bold mb-1">Digital Product Store Builder</h5>
+            <p class="text-muted small mb-3">Creator-focused stores with Paystack/Flutterwave, file hosting, and low-data optimizations.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                      data-title="Digital Product Store Builder"
+                      data-img="https://cdn.pixabay.com/photo/2017/06/29/00/58/online-store-2452808_1280.jpg"
+                      data-desc="A full-stack seller platform for digital goods: upload, manage and sell with local payment gateways and analytics."
+                      data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Educational Game -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="game" data-title="Educational Game" data-desc="Interactive learning game for students.">
+        <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
+          <img src="https://cdn.pixabay.com/photo/2020/03/23/18/37/kid-4969436_1280.jpg" alt="Educational Game" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <div class="p-4">
+            <h5 class="fw-bold mb-1">Educational Game</h5>
+            <p class="text-muted small mb-3">Offline-friendly learning game with leaderboards, progress tracking and teacher analytics.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                      data-title="Educational Game"
+                      data-img="https://cdn.pixabay.com/photo/2020/03/23/18/37/kid-4969436_1280.jpg"
+                      data-desc="A Unity-powered educational game with progress tracking and reward systems for young learners."
+                      data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart Business Dashboard -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="web" data-title="Smart Business Dashboard" data-desc="All-in-one analytics dashboard for growing companies.">
+        <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
+          <img src="https://cdn.pixabay.com/photo/2017/08/10/03/08/dashboard-2618267_1280.jpg" alt="Business Dashboard" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <div class="p-4">
+            <h5 class="fw-bold mb-1">Smart Business Dashboard</h5>
+            <p class="text-muted small mb-3">Real-time analytics for sales, customers and campaigns — built for data-driven teams.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                      data-title="Smart Business Dashboard"
+                      data-img="https://cdn.pixabay.com/photo/2017/08/10/03/08/dashboard-2618267_1280.jpg"
+                      data-desc="Dashboard that unifies sales, marketing and customer data with easy-to-read visualizations and CSV export."
+                      data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- load more placeholder (can be wired to fetch more items) -->
-    <div class="text-center load-more">
+    <div class="text-center load-more mt-4">
       <button id="loadMoreBtn" class="btn btn-outline-secondary">Load more projects</button>
     </div>
   </div>
@@ -304,11 +350,12 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+  // Year
   document.getElementById('year2').textContent = new Date().getFullYear();
 
   // Filters logic
   const chips = Array.from(document.querySelectorAll('.chip'));
-  const items = Array.from(document.querySelectorAll('.project-item'));
+  let items = Array.from(document.querySelectorAll('.project-item'));
   const searchInput = document.getElementById('searchInput');
   const clearBtn = document.getElementById('searchClear');
 
@@ -343,8 +390,8 @@
     applyFilter(document.querySelector('.chip.active').getAttribute('data-filter'), '');
   });
 
-  // Modal viewer wiring
-  const viewBtns = Array.from(document.querySelectorAll('.view-btn'));
+  // Modal: event delegation so cloned items work without re-wiring
+  const projectsGrid = document.getElementById('projectsGrid');
   const caseModalEl = document.getElementById('caseModal');
   const caseTitle = document.getElementById('caseTitle');
   const caseImg = document.getElementById('caseImg');
@@ -352,47 +399,60 @@
   const caseLink = document.getElementById('caseLink');
   const bsModal = new bootstrap.Modal(caseModalEl);
 
-  viewBtns.forEach(btn => btn.addEventListener('click', () => {
-    const title = btn.getAttribute('data-title');
-    const img = btn.getAttribute('data-img');
-    const desc = btn.getAttribute('data-desc');
-    const link = btn.getAttribute('data-link');
+  projectsGrid.addEventListener('click', (e) => {
+    const btn = e.target.closest('.view-btn');
+    if (!btn) return;
+    const title = btn.getAttribute('data-title') || 'Case Study';
+    const img = btn.getAttribute('data-img') || '';
+    const desc = btn.getAttribute('data-desc') || '';
+    const link = btn.getAttribute('data-link') || '#';
     caseTitle.textContent = title;
     caseImg.src = img;
     caseImg.alt = title;
     caseDesc.textContent = desc;
-    caseLink.href = link || '#';
+    caseLink.href = link;
     bsModal.show();
-  }));
+  });
 
-  // Load more (demo: simply clones existing cards; replace with real fetch)
+  // Load more (demo: clones first 3 items)
   const loadMoreBtn = document.getElementById('loadMoreBtn');
   loadMoreBtn.addEventListener('click', () => {
     const grid = document.getElementById('projectsGrid');
-    // simple demo: clone first 3 items (in real site you would fetch more from server)
-    const clones = Array.from(grid.querySelectorAll('.project-item')).slice(0,3).map(el => el.cloneNode(true));
+    const existing = Array.from(grid.querySelectorAll('.project-item'));
+    const clones = existing.slice(0,3).map(el => el.cloneNode(true));
     clones.forEach(clone => grid.appendChild(clone));
-    // re-wire view buttons of clones
-    Array.from(grid.querySelectorAll('.view-btn')).forEach(btn => {
-      btn.removeEventListener('click', () => {});
-      btn.addEventListener('click', () => {
-        const title = btn.getAttribute('data-title');
-        const img = btn.getAttribute('data-img');
-        const desc = btn.getAttribute('data-desc');
-        const link = btn.getAttribute('data-link');
-        caseTitle.textContent = title;
-        caseImg.src = img;
-        caseImg.alt = title;
-        caseDesc.textContent = desc;
-        caseLink.href = link || '#';
-        bsModal.show();
-      });
-    });
+    // refresh items list for filtering
+    items = Array.from(document.querySelectorAll('.project-item'));
+    // observe new items for scroll animation
+    observeAnimatedItems();
   });
 
-  // Initialize show all
+  // Scroll animations using IntersectionObserver
+  const animatedItemsSelector = '.fade-in-up';
+  const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
+  let io = null;
+  function observeAnimatedItems() {
+    const nodes = document.querySelectorAll(animatedItemsSelector);
+    if (io) { nodes.forEach(n => io.observe(n)); return; }
+    io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          // also add class to inner card for stagger
+          const card = entry.target.querySelector('.project-card');
+          if (card) card.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    nodes.forEach(n => io.observe(n));
+  }
+
+  // Initialize view
   applyFilter('all', '');
+  observeAnimatedItems();
 </script>
+
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
   window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -404,8 +464,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
