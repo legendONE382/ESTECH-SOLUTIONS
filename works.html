@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="canonical" href="https://estechsolutions.vercel.app/" />
-  <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Our Works – Estech Solutions | Innovative Digital Projects</title>
+  <meta name="description" content="Explore Estech Solutions' portfolio of web, app, and AI projects designed to help businesses thrive." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <meta name="description" content="Explore Estech Solutions' portfolio of cutting-edge web, app, and AI projects designed to help businesses thrive in the digital era." />
   <meta name="keywords" content="Estech Solutions projects, Estech portfolio, web apps, AI development, tech innovation" />
   <meta name="author" content="Estech Solutions" />
@@ -17,82 +18,66 @@
   <meta property="og:description" content="See our creative and technical works in web, AI, and app development." />
   <meta property="og:image" content="https://estechsolutions.vercel.app/images/og-preview.jpg" />
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --accent:#0d6efd;
-      --accent-2:#7c3aed;
-      --bg:#f6f8fb;
-      --muted:#6c757d;
-      --text:#0b1220;
-      --card-bg:#fff;
+    :root{
+      --accent:#0d6efd; --accent-2:#7c3aed; --bg:#f6f8fb; --muted:#6c757d; --text:#0b1220; --card-bg:#fff;
     }
-    body {
-      font-family:'Inter',system-ui;
-      background:var(--bg);
-      color:var(--text);
-      transition:background .3s,color .3s;
-    }
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; background:var(--bg); color:var(--text); scroll-behavior:smooth; margin:0;}
     a{text-decoration:none}
-    .navbar-brand{font-weight:800;}
-    .dark-mode {
-      --bg:#0d1117;
-      --text:#e6edf3;
-      --card-bg:#161b22;
-      --muted:#9aa3ad;
-    }
-    .project-card{background:var(--card-bg)!important;}
+    .navbar-brand{font-weight:800;letter-spacing:.6px}
+    .nav-link{font-weight:600;color:rgba(0,0,0,.75) !important}
 
-    /* Smooth reveal */
-    .fade-in-up{opacity:0;transform:translateY(20px);transition:all .6s ease;}
-    .fade-in-up.in-view{opacity:1;transform:translateY(0);}
-    .hover-scale{transition:transform .3s,box-shadow .3s;}
-    .hover-scale:hover{transform:scale(1.03);box-shadow:0 10px 30px rgba(0,0,0,.1);}
+    /* Hero */
+    .works-hero{background:linear-gradient(180deg,rgba(13,17,24,0.02),rgba(13,17,24,0.03));padding:4.5rem 0 2rem;text-align:center}
+    .works-hero h1{font-weight:900;margin-bottom:.35rem}
+    .works-hero p.lead{color:var(--muted);margin-bottom:1.25rem}
 
-    /* Dark toggle */
-    .toggle-dark {
-      cursor:pointer;
-      padding:8px 14px;
-      border-radius:30px;
-      background:var(--accent);
-      color:white;
-      font-weight:600;
-      border:none;
-      transition:all .3s;
-    }
-    .toggle-dark:hover{opacity:.9;}
+    /* Filters */
+    .filters{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+    .chip{border-radius:999px;padding:.45rem .9rem;font-weight:700;border:1px solid rgba(11,18,32,.06);background:white;cursor:pointer;transition:transform .18s,box-shadow .18s}
+    .chip.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 12px 30px rgba(13,110,253,.12);transform:translateY(-4px)}
 
-    /* Back to top */
-    #backToTop {
-      position:fixed;
-      bottom:25px; right:25px;
-      background:var(--accent);
-      color:white;
-      border:none;
-      border-radius:50%;
-      width:45px; height:45px;
-      font-size:20px;
-      display:none;
-      place-items:center;
-      box-shadow:0 4px 12px rgba(0,0,0,.2);
-      z-index:99;
-    }
+    /* Grid */
+    .projects-grid{margin-top:1rem}
+    .project-card{border-radius:12px;overflow:hidden;background:var(--card-bg);box-shadow:0 10px 30px rgba(11,18,32,.06);transition:transform .28s,box-shadow .28s}
+    .project-card:hover{transform:translateY(-8px);box-shadow:0 22px 50px rgba(11,18,32,.09)}
+    .project-media{height:200px;object-fit:cover;width:100%;display:block}
+    .tag{font-size:.78rem;padding:.25rem .55rem;border-radius:999px;background:rgba(11,18,32,.04);font-weight:700}
 
-    /* Stats */
-    .stats { background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; }
-    .stat { text-align:center; padding:1.5rem 0; }
-    .stat h3 { font-weight:900; margin:0; font-size:2rem; }
-    .stat p { margin:0; opacity:.9; }
+    .btn-outline-accent{border-color:var(--accent);color:var(--accent);font-weight:700}
+    .btn-outline-accent:hover{background:var(--accent);color:white}
 
-    footer{background:transparent;}
+    .case-img{width:100%;height:360px;object-fit:cover;border-radius:8px;margin-bottom:1rem}
+    @media (max-width:768px){ .project-media{height:170px} .case-img{height:220px} }
+
+    /* hover scale */
+    .hover-scale { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .hover-scale:hover { transform: scale(1.03); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+
+    /* reveal animation */
+    .fade-in-up{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+    .fade-in-up.in-view{opacity:1;transform:translateY(0)}
+    .project-card .p-4 > *{opacity:0;transform:translateY(8px);transition:opacity .4s ease .15s,transform .4s ease .15s}
+    .project-card.in-view .p-4 > *{opacity:1;transform:translateY(0)}
+
+    /* dark mode */
+    .dark { --bg:#0d1117; --text:#e6edf3; --card-bg:#0f1720; --muted:#9aa3ad; background:var(--bg); color:var(--text); }
+    .dark .navbar, .dark .bg-white{ background: transparent !important; }
+    .dark .chip{border-color:rgba(255,255,255,0.06); background:#0f1720; color:var(--text) }
+    .dark .chip.active{ box-shadow: none; }
+    .toggle-dark { border-radius:999px; padding:.35rem .8rem; border:none; cursor:pointer; font-weight:700 }
+
+    /* back to top */
+    #backToTop{position:fixed;right:20px;bottom:20px;background:var(--accent);color:white;border:0;width:44px;height:44px;border-radius:50%;display:none;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(13,110,253,.18);z-index:999}
+
+    /* stats */
+    .stats{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border-radius:12px;padding:18px;margin-top:1.25rem}
+    .stat-number{font-weight:900;font-size:1.8rem;margin-bottom:0}
+    .no-results{display:none;text-align:center;padding:30px;color:var(--muted)}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">ESTECH</a>
@@ -100,177 +85,399 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link active" href="works.html">Solutions</a></li>
         <li class="nav-item"><a class="nav-link" href="hire.html">Hire Us</a></li>
-        <li class="nav-item"><button id="darkToggle" class="toggle-dark ms-lg-3">🌙 Dark</button></li>
+        <li class="nav-item ms-2"><button id="darkToggle" class="toggle-dark">🌙 Dark</button></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<header class="works-hero text-center py-5">
+<header class="works-hero">
   <div class="container">
-    <h1 class="fw-bold display-5">Our Solutions & Case Studies</h1>
-    <p class="lead text-muted">Real projects solving real problems — explore examples across Web, Mobile, AI and Game development.</p>
+    <h1>Our Solutions & Case Studies</h1>
+    <p class="lead">Real projects solving real problems — explore examples across Web, Mobile, AI and Game development.</p>
+
+    <div class="row gy-3 justify-content-center mt-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="search-wrap">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#6c757d" viewBox="0 0 24 24"><path d="M21.71 20.29l-5.4-5.4A7.92 7.92 0 0018 10a8 8 0 10-8 8 7.92 7.92 0 004.89-1.69l5.4 5.4a1 1 0 001.42-1.42zM4 10a6 6 0 116 6 6 6 0 01-6-6z"/></svg>
+            </span>
+            <input id="searchInput" type="text" class="form-control border-start-0" placeholder="Search projects, e.g. e-commerce, dashboard..." aria-label="Search projects">
+            <button id="searchClear" class="btn btn-outline-secondary" title="Clear">✕</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 text-center mt-3">
+        <div class="filters" id="filters" role="list">
+          <div class="chip active" data-filter="all" role="listitem">All</div>
+          <div class="chip" data-filter="web" role="listitem">Web</div>
+          <div class="chip" data-filter="mobile" role="listitem">Mobile</div>
+          <div class="chip" data-filter="game" role="listitem">Game</div>
+          <div class="chip" data-filter="ai" role="listitem">AI</div>
+          <div class="chip" data-filter="ecommerce" role="listitem">E-commerce</div>
+          <div class="chip" data-filter="hospitality" role="listitem">Hospitality</div>
+          <div class="chip" data-filter="media" role="listitem">Media</div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
-<!-- PROJECTS GRID -->
 <section class="py-5">
   <div class="container">
-    <div class="row g-4 projects-grid" id="projectsGrid">
-      <!-- AI Tool -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ai">
+    <div id="projectsGrid" class="row g-4 projects-grid">
+
+      <!-- Card 1: Market Research Summarizer (AI) -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ai,web" data-title="Market Research Summarizer" data-desc="AI-powered app for analyzing market trends and customer feedback.">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img loading="lazy" src="https://cdn.pixabay.com/photo/2018/01/15/07/51/artificial-intelligence-3082266_1280.jpg" alt="AI Research Tool" class="w-100" style="height:220px;object-fit:cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2018/01/15/07/51/artificial-intelligence-3082266_1280.jpg" alt="Market Research AI" class="project-media w-100">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">Market Research Summarizer</h5>
-            <p class="small text-muted">AI app that turns data into actionable business insights.</p>
-            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">Market Research Summarizer</h5>
+              <span class="tag">AI</span>
+            </div>
+            <p class="text-muted small mb-3">Transforms complex market data and reviews into concise, actionable reports.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                data-title="Market Research Summarizer"
+                data-img="https://cdn.pixabay.com/photo/2018/01/15/07/51/artificial-intelligence-3082266_1280.jpg"
+                data-desc="Custom AI tool that summarizes reports, competitor snapshots and growth recommendations. Ideal for SMEs and product teams."
+                data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- School Management -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="education">
+      <!-- Card 2: Event Management (Web) -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="web" data-title="Event Management Platform" data-desc="Web app for booking, promoting, and managing events easily.">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img loading="lazy" src="https://cdn.pixabay.com/photo/2016/02/19/11/53/classroom-1209820_1280.jpg" alt="School Management System" class="w-100" style="height:220px;object-fit:cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2016/10/29/08/33/audience-1776755_1280.jpg" alt="Event Management Platform" class="project-media w-100">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">Smart School Portal</h5>
-            <p class="small text-muted">A web app for managing students, results, and payments.</p>
-            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">Event Management Platform</h5>
+              <span class="tag">Web</span>
+            </div>
+            <p class="text-muted small mb-3">Ticketing, promotions and attendance analytics for organizers.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                data-title="Event Management Platform"
+                data-img="https://cdn.pixabay.com/photo/2016/10/29/08/33/audience-1776755_1280.jpg"
+                data-desc="Responsive event platform with payment integration, automated reminders and attendance analytics."
+                data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Business Website -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="business">
+      <!-- Card 3: AI Support Assistant -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ai" data-title="AI Support Assistant" data-desc="Smart virtual agent that automates replies and improves customer experience.">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img loading="lazy" src="https://cdn.pixabay.com/photo/2017/01/10/19/05/business-1966028_1280.jpg" alt="Business Website" class="w-100" style="height:220px;object-fit:cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2018/05/08/08/57/chatbot-3389624_1280.jpg" alt="AI Support Assistant" class="project-media w-100">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">Corporate Website</h5>
-            <p class="small text-muted">Modern business site showcasing company profile and services.</p>
-            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">AI Support Assistant</h5>
+              <span class="tag">AI</span>
+            </div>
+            <p class="text-muted small mb-3">Context-aware chatbot that escalates important issues to human staff.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                data-title="AI Support Assistant"
+                data-img="https://cdn.pixabay.com/photo/2018/05/08/08/57/chatbot-3389624_1280.jpg"
+                data-desc="Chatbot integrated with CRM & ticketing to automate support, create tickets and escalate when needed."
+                data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- E-Commerce Store -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ecommerce">
+      <!-- Card 4: Digital Product Store -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ecommerce,web" data-title="Digital Product Store Builder" data-desc="Empowers creators to sell digital goods with secure payments.">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img loading="lazy" src="https://cdn.pixabay.com/photo/2017/08/10/03/48/ecommerce-2614473_1280.jpg" alt="Ecommerce App" class="w-100" style="height:220px;object-fit:cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2017/08/10/03/48/ecommerce-2614473_1280.jpg" alt="Digital Product Store" class="project-media w-100">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">Online Product Store</h5>
-            <p class="small text-muted">A responsive platform for creators to sell digital products.</p>
-            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">Digital Product Store Builder</h5>
+              <span class="tag">E-commerce</span>
+            </div>
+            <p class="text-muted small mb-3">Creator-focused stores with Paystack, hosting and analytics.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                data-title="Digital Product Store Builder"
+                data-img="https://cdn.pixabay.com/photo/2017/08/10/03/48/ecommerce-2614473_1280.jpg"
+                data-desc="Full-stack seller platform for digital goods with local payments, file delivery and sales analytics."
+                data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Hotel & Booking -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="hospitality">
+      <!-- Card 5: Hotel Booking -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="hospitality,web" data-title="Hotel Booking Platform" data-desc="Interactive booking site with room previews and live chat.">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img loading="lazy" src="https://cdn.pixabay.com/photo/2016/11/18/12/35/hotel-1831072_1280.jpg" alt="Hotel Booking Site" class="w-100" style="height:220px;object-fit:cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2016/11/18/12/35/hotel-1831072_1280.jpg" alt="Hotel Booking Site" class="project-media w-100">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">Hotel Booking Platform</h5>
-            <p class="small text-muted">Interactive booking site with room previews and live chat.</p>
-            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">Hotel Booking Platform</h5>
+              <span class="tag">Hospitality</span>
+            </div>
+            <p class="text-muted small mb-3">Room search, galleries, live chat and reservation flow.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                data-title="Hotel Booking Platform"
+                data-img="https://cdn.pixabay.com/photo/2016/11/18/12/35/hotel-1831072_1280.jpg"
+                data-desc="A modern booking website enabling direct reservations, gallery previews and customer messaging."
+                data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Media Platform -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="media">
+      <!-- Card 6: Media & Music Hub -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="media" data-title="Media & Music Hub" data-desc="Streaming & downloads platform for audio and media.">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img loading="lazy" src="https://cdn.pixabay.com/photo/2017/06/29/09/34/music-2451059_1280.jpg" alt="Music Streaming Platform" class="w-100" style="height:220px;object-fit:cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2017/06/29/09/34/music-2451059_1280.jpg" alt="Music Platform" class="project-media w-100">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">Media & Music Hub</h5>
-            <p class="small text-muted">All-in-one platform for streaming, downloading, and sharing media.</p>
-            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="mb-0">Media & Music Hub</h5>
+              <span class="tag">Media</span>
+            </div>
+            <p class="text-muted small mb-3">Streaming, downloads, and creator uploads in one place.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary btn-sm view-btn"
+                data-title="Media & Music Hub"
+                data-img="https://cdn.pixabay.com/photo/2017/06/29/09/34/music-2451059_1280.jpg"
+                data-desc="Platform for streaming and downloads with uploader dashboards and analytics."
+                data-link="#">View Case Study</button>
+              <a href="hire.html" class="btn btn-primary btn-sm ms-auto">Hire Us</a>
+            </div>
           </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center load-more mt-4">
+      <button id="loadMoreBtn" class="btn btn-outline-secondary">Load more projects</button>
+    </div>
+
+    <div class="no-results mt-4" id="noResults">No projects match your search / filters.</div>
+
+    <div class="stats mt-4">
+      <div class="row text-center">
+        <div class="col-6 col-md-3 stat">
+          <div class="stat-number" data-count="120">0</div>
+          <div class="small">Projects</div>
+        </div>
+        <div class="col-6 col-md-3 stat">
+          <div class="stat-number" data-count="75">0</div>
+          <div class="small">Clients</div>
+        </div>
+        <div class="col-6 col-md-3 stat">
+          <div class="stat-number" data-count="8">0</div>
+          <div class="small">Countries</div>
+        </div>
+        <div class="col-6 col-md-3 stat">
+          <div class="stat-number" data-count="5">0</div>
+          <div class="small">Awards</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Stats -->
-<section class="stats">
-  <div class="container">
-    <div class="row">
-      <div class="col-6 col-md-3 stat">
-        <h3 data-count="120">0</h3><p>Projects</p>
-      </div>
-      <div class="col-6 col-md-3 stat">
-        <h3 data-count="75">0</h3><p>Clients</p>
-      </div>
-      <div class="col-6 col-md-3 stat">
-        <h3 data-count="8">0</h3><p>Countries</p>
-      </div>
-      <div class="col-6 col-md-3 stat">
-        <h3 data-count="5">0</h3><p>Awards</p>
+<!-- Case Study Modal (single modal reused) -->
+<div class="modal fade" id="caseModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-4">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <h4 id="caseTitle" class="mb-0"></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <img id="caseImg" class="case-img" src="" alt="">
+        <p id="caseDesc" class="text-muted"></p>
+        <div class="d-flex gap-2 mt-3">
+          <a id="caseLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Project</a>
+          <a href="hire.html" class="btn btn-outline-dark ms-auto">Hire Our Team</a>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- FOOTER -->
 <footer class="py-4 text-center">
   <div class="container">
-    <p class="mb-1">&copy; <span id="year"></span> Estech Solutions</p>
-    <p class="small text-muted">Made with 💙 by our team — <a href="hire.html">Hire us</a></p>
+    <p class="mb-1">&copy; <span id="year2"></span> Estech Solutions</p>
+    <p class="small text-muted">Want this design? <a href="hire.html">Hire us</a> — we build custom sites & apps.</p>
   </div>
 </footer>
 
-<!-- Back to Top -->
-<button id="backToTop" title="Go to top">↑</button>
+<button id="backToTop" aria-label="Back to top">↑</button>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Basic variables
+  document.getElementById('year2').textContent = new Date().getFullYear();
+  const chips = Array.from(document.querySelectorAll('.chip'));
+  let items = Array.from(document.querySelectorAll('.project-item'));
+  const searchInput = document.getElementById('searchInput');
+  const clearBtn = document.getElementById('searchClear');
+  const noResultsEl = document.getElementById('noResults');
 
-  // Reveal animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('in-view');
+  // Filter & Search
+  function applyFilter(filter='all', q='') {
+    const qLower = q.trim().toLowerCase();
+    let anyVisible = false;
+    items.forEach(it => {
+      const cats = (it.getAttribute('data-cats') || '').split(',').map(s=>s.trim());
+      const title = (it.getAttribute('data-title') || '').toLowerCase();
+      const desc = (it.getAttribute('data-desc') || '').toLowerCase();
+      const matchesCat = filter === 'all' ? true : cats.includes(filter);
+      const matchesQuery = qLower === '' ? true : (title.includes(qLower) || desc.includes(qLower));
+      const show = matchesCat && matchesQuery;
+      it.style.display = show ? '' : 'none';
+      if(show) anyVisible = true;
     });
-  }, {threshold:0.1});
-  document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+    noResultsEl.style.display = anyVisible ? 'none' : '';
+  }
 
-  // Dark mode toggle
-  const body = document.body;
-  const darkToggle = document.getElementById('darkToggle');
-  const darkPref = localStorage.getItem('darkMode');
-  if (darkPref === 'true') { body.classList.add('dark-mode'); darkToggle.textContent='☀️ Light'; }
-  darkToggle.onclick = () => {
-    body.classList.toggle('dark-mode');
-    const enabled = body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', enabled);
-    darkToggle.textContent = enabled ? '☀️ Light' : '🌙 Dark';
-  };
+  chips.forEach(chip=>chip.addEventListener('click', ()=>{
+    chips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    const f = chip.getAttribute('data-filter');
+    applyFilter(f, searchInput.value);
+  }));
+
+  searchInput.addEventListener('input', ()=> {
+    const active = document.querySelector('.chip.active').getAttribute('data-filter');
+    applyFilter(active, searchInput.value);
+  });
+
+  clearBtn.addEventListener('click', ()=> {
+    searchInput.value = '';
+    applyFilter(document.querySelector('.chip.active').getAttribute('data-filter'), '');
+  });
+
+  // Modal wiring using event delegation
+  const projectsGrid = document.getElementById('projectsGrid');
+  const caseModalEl = document.getElementById('caseModal');
+  const caseTitle = document.getElementById('caseTitle');
+  const caseImg = document.getElementById('caseImg');
+  const caseDesc = document.getElementById('caseDesc');
+  const caseLink = document.getElementById('caseLink');
+  const bsModal = new bootstrap.Modal(caseModalEl);
+
+  projectsGrid.addEventListener('click', (e) => {
+    const btn = e.target.closest('.view-btn');
+    if(!btn) return;
+    const title = btn.getAttribute('data-title') || 'Case Study';
+    const img = btn.getAttribute('data-img') || '';
+    const desc = btn.getAttribute('data-desc') || '';
+    const link = btn.getAttribute('data-link') || '#';
+    caseTitle.textContent = title;
+    caseImg.src = img;
+    caseImg.alt = title;
+    caseDesc.textContent = desc;
+    caseLink.href = link;
+    bsModal.show();
+  });
+
+  // Load more - clones first 3 (demo)
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  loadMoreBtn.addEventListener('click', ()=>{
+    const grid = document.getElementById('projectsGrid');
+    const existing = Array.from(grid.querySelectorAll('.project-item'));
+    const clones = existing.slice(0,3).map(el => el.cloneNode(true));
+    clones.forEach(c => grid.appendChild(c));
+    // refresh items for filtering and animation observer
+    items = Array.from(document.querySelectorAll('.project-item'));
+    observeAnimatedItems(); // observe newly added
+  });
+
+  // IntersectionObserver for reveal animations
+  const animatedSelector = '.fade-in-up';
+  const ioOptions = { root:null, rootMargin:'0px', threshold:0.12 };
+  let io = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        const card = entry.target.querySelector('.project-card');
+        if(card) card.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, ioOptions);
+  function observeAnimatedItems(){ document.querySelectorAll(animatedSelector).forEach(n => io.observe(n)); }
+  observeAnimatedItems();
 
   // Back to top
   const backBtn = document.getElementById('backToTop');
-  window.onscroll = () => backBtn.style.display = window.scrollY > 200 ? 'grid' : 'none';
-  backBtn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+  window.addEventListener('scroll', ()=> { backBtn.style.display = window.scrollY > 300 ? 'grid' : 'none'; });
+  backBtn.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
 
-  // Counter animation
+  // Counters
   const counters = document.querySelectorAll('[data-count]');
-  const counterObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        const el=e.target; let start=0; const end=parseInt(el.dataset.count);
-        const speed=Math.ceil(end/50);
-        const inc=()=>{start+=speed;if(start<end){el.textContent=start;requestAnimationFrame(inc);}else{el.textContent=end;}};
-        inc(); counterObserver.unobserve(el);
+  const counterIO = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const end = parseInt(el.getAttribute('data-count'),10) || 0;
+        let start = 0;
+        const step = Math.max(1, Math.floor(end / 60));
+        const tick = () => {
+          start += step;
+          if(start < end){ el.textContent = start; requestAnimationFrame(tick); }
+          else el.textContent = end;
+        };
+        tick();
+        obs.unobserve(el);
       }
     });
+  }, {threshold: 0.2});
+  counters.forEach(c=>counterIO.observe(c));
+
+  // Dark mode toggle persistence
+  const darkToggle = document.getElementById('darkToggle');
+  const DARK_KEY = 'estech_dark';
+  function setDark(enabled){
+    document.documentElement.classList.toggle('dark', enabled);
+    document.body.classList.toggle('dark', enabled);
+    darkToggle.textContent = enabled ? '☀ Light' : '🌙 Dark';
+    localStorage.setItem(DARK_KEY, enabled ? '1' : '0');
+  }
+  // Initialize preference
+  setDark(localStorage.getItem(DARK_KEY) === '1');
+  darkToggle.addEventListener('click', ()=> setDark(!(localStorage.getItem(DARK_KEY) === '1')));
+
+  // Accessibility: keyboard support for chips
+  chips.forEach(chip=>{
+    chip.setAttribute('tabindex','0');
+    chip.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') chip.click(); });
   });
-  counters.forEach(c=>counterObserver.observe(c));
+
+  // Initial filter show-all
+  applyFilter('all','');
+
+  // Small safety: hide broken images (replace with placeholder)
+  document.addEventListener('error', function(e){
+    const t = e.target;
+    if(t.tagName.toLowerCase() === 'img' && !t.dataset._handled){
+      t.dataset._handled = '1';
+      t.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800"><rect width="100%" height="100%" fill="%23f0f0f0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23999" font-family="Arial,Helvetica,sans-serif" font-size="28">Image not available</text></svg>';
+    }
+  }, true);
 </script>
+
 </body>
 </html>
