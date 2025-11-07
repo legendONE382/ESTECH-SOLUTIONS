@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <link rel="canonical" href="https://estechsolutions.vercel.app/" />
   <meta name="robots" content="index, follow" />
-  <meta name="googlebot" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Works – Estech Solutions | Innovative Digital Projects</title>
   <meta name="description" content="Explore Estech Solutions' portfolio of cutting-edge web, app, and AI projects designed to help businesses thrive in the digital era." />
@@ -18,127 +17,77 @@
   <meta property="og:description" content="See our creative and technical works in web, AI, and app development." />
   <meta property="og:image" content="https://estechsolutions.vercel.app/images/og-preview.jpg" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Our Works – Estech Solutions" />
-  <meta name="twitter:description" content="Explore our digital works and innovation projects." />
-  <meta name="twitter:image" content="https://estechsolutions.vercel.app/images/og-preview.jpg" />
-
-  <!-- Analytics & Pixel (same as home) -->
-  <meta name="google-site-verification" content="xbSDnvWUpVwwPQIOFKmeJu-5jykqXZ5RTL8RRe88FfE" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2CSM88HT3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-P2CSM88HT3');
-  </script>
-
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '816794354059989');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=816794354059989D&ev=PageView&noscript=1"/></noscript>
-
-  <!-- OneSignal -->
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-  <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {OneSignal.init({
-      appId: "9f5e956e-7020-4eb9-9d68-ab65ef7dc748",
-    }); });
-  </script>
-
-  <!-- Bootstrap + Font -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 
   <style>
-    :root{
+    :root {
       --accent:#0d6efd;
       --accent-2:#7c3aed;
       --bg:#f6f8fb;
       --muted:#6c757d;
+      --text:#0b1220;
+      --card-bg:#fff;
     }
-    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial; background:var(--bg); color:#0b1220; scroll-behavior:smooth}
+    body {
+      font-family:'Inter',system-ui;
+      background:var(--bg);
+      color:var(--text);
+      transition:background .3s,color .3s;
+    }
     a{text-decoration:none}
+    .navbar-brand{font-weight:800;}
+    .dark-mode {
+      --bg:#0d1117;
+      --text:#e6edf3;
+      --card-bg:#161b22;
+      --muted:#9aa3ad;
+    }
+    .project-card{background:var(--card-bg)!important;}
 
-    /* NAV clone style */
-    .navbar-brand{font-weight:800;letter-spacing:.6px}
-    .nav-link{font-weight:600;color:rgba(0,0,0,.75) !important}
+    /* Smooth reveal */
+    .fade-in-up{opacity:0;transform:translateY(20px);transition:all .6s ease;}
+    .fade-in-up.in-view{opacity:1;transform:translateY(0);}
+    .hover-scale{transition:transform .3s,box-shadow .3s;}
+    .hover-scale:hover{transform:scale(1.03);box-shadow:0 10px 30px rgba(0,0,0,.1);}
 
-    /* Page hero */
-    .works-hero{background:linear-gradient(180deg,rgba(13,17,24,0.02),rgba(13,17,24,0.03));padding:5.5rem 0 3rem}
-    .works-hero h1{font-weight:900;margin-bottom:.4rem}
-    .works-hero p.lead{color:var(--muted)}
+    /* Dark toggle */
+    .toggle-dark {
+      cursor:pointer;
+      padding:8px 14px;
+      border-radius:30px;
+      background:var(--accent);
+      color:white;
+      font-weight:600;
+      border:none;
+      transition:all .3s;
+    }
+    .toggle-dark:hover{opacity:.9;}
 
-    /* Filters */
-    .filters{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
-    .chip{border-radius:999px;padding:.45rem .9rem;font-weight:700;border:1px solid rgba(11,18,32,.06);background:white;cursor:pointer;transition:transform .18s,box-shadow .18s}
-    .chip.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 12px 30px rgba(13,110,253,.12);transform:translateY(-4px)}
-
-    /* Search */
-    .search-wrap .form-control{border-radius:999px;padding: .9rem 1.1rem}
-    .input-group-text svg{display:block}
-
-    /* Grid */
-    .projects-grid{margin-top:1.5rem}
-    .project-card{border-radius:12px;overflow:hidden;background:white;box-shadow:0 10px 30px rgba(11,18,32,.06);transition:transform .28s,box-shadow .28s}
-    .project-card:hover{transform:translateY(-10px);box-shadow:0 22px 50px rgba(11,18,32,.09)}
-    .project-media{height:200px;object-fit:cover;width:100%;display:block}
-    .tag{font-size:.78rem;padding:.25rem .55rem;border-radius:999px;background:rgba(11,18,32,.04);font-weight:700}
-
-    /* Buttons */
-    .btn-outline-accent{border-color:var(--accent);color:var(--accent);font-weight:700}
-    .btn-outline-accent:hover{background:var(--accent);color:white}
-
-    /* Modal */
-    .modal-lg{max-width:960px}
-    .case-img{width:100%;height:420px;object-fit:cover;border-radius:8px;margin-bottom:1rem}
-
-    /* Load more */
-    .load-more{margin-top:1.5rem}
-
-    @media (max-width:768px){
-      .project-media{height:170px}
-      .case-img{height:260px}
+    /* Back to top */
+    #backToTop {
+      position:fixed;
+      bottom:25px; right:25px;
+      background:var(--accent);
+      color:white;
+      border:none;
+      border-radius:50%;
+      width:45px; height:45px;
+      font-size:20px;
+      display:none;
+      place-items:center;
+      box-shadow:0 4px 12px rgba(0,0,0,.2);
+      z-index:99;
     }
 
-    /* hover scale (visual cards) */
-    .hover-scale {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hover-scale:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-    .project-card {
-      background-color: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid #f0f0f0;
-    }
-    .project-media { border-bottom: 3px solid #0d6efd; }
+    /* Stats */
+    .stats { background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; }
+    .stat { text-align:center; padding:1.5rem 0; }
+    .stat h3 { font-weight:900; margin:0; font-size:2rem; }
+    .stat p { margin:0; opacity:.9; }
 
-    /* scroll animations */
-    .fade-in-up { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; will-change: opacity, transform; }
-    .fade-in-up.in-view { opacity: 1; transform: translateY(0); }
-
-    /* subtle stagger for child elements */
-    .project-card .p-4 > * { transition: opacity .4s ease .15s, transform .4s ease .15s; opacity: 0; transform: translateY(8px); }
-    .project-card.in-view .p-4 > * { opacity: 1; transform: translateY(0); transition-delay: 0s; }
-
-    footer { background: transparent; }
-
+    footer{background:transparent;}
   </style>
 </head>
 <body>
@@ -147,320 +96,181 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">ESTECH</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu2">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navMenu2">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link active" href="works.html">Solutions</a></li>
         <li class="nav-item"><a class="nav-link" href="hire.html">Hire Us</a></li>
-        <li class="nav-item"><a class="nav-link btn btn-sm btn-outline-primary ms-2" href="contact.html">Contact</a></li>
+        <li class="nav-item"><button id="darkToggle" class="toggle-dark ms-lg-3">🌙 Dark</button></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="works-hero text-center">
+<header class="works-hero text-center py-5">
   <div class="container">
-    <h1>Our Solutions & Case Studies</h1>
-    <p class="lead">Real projects solving real problems — explore examples across Web, Mobile, AI and Game development.</p>
-
-    <div class="row gy-3 justify-content-center mt-4">
-      <div class="col-md-6 col-lg-4">
-        <div class="search-wrap">
-          <div class="input-group">
-            <span class="input-group-text bg-white border-end-0"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#6c757d" viewBox="0 0 24 24"><path d="M21.71 20.29l-5.4-5.4A7.92 7.92 0 0018 10a8 8 0 10-8 8 7.92 7.92 0 004.89-1.69l5.4 5.4a1 1 0 001.42-1.42zM4 10a6 6 0 116 6 6 6 0 01-6-6z"></path></svg></span>
-            <input id="searchInput" type="text" class="form-control border-start-0" placeholder="Search projects, e.g. e-commerce, dashboard..." aria-label="Search projects">
-            <button id="searchClear" class="btn btn-outline-secondary" title="Clear">✕</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 text-center mt-3">
-        <div class="filters" id="filters">
-          <div class="chip active" data-filter="all">All</div>
-          <div class="chip" data-filter="web">Web</div>
-          <div class="chip" data-filter="mobile">Mobile</div>
-          <div class="chip" data-filter="game">Game</div>
-          <div class="chip" data-filter="ai">AI</div>
-        </div>
-      </div>
-    </div>
+    <h1 class="fw-bold display-5">Our Solutions & Case Studies</h1>
+    <p class="lead text-muted">Real projects solving real problems — explore examples across Web, Mobile, AI and Game development.</p>
   </div>
 </header>
 
 <!-- PROJECTS GRID -->
 <section class="py-5">
   <div class="container">
-    <div id="projectsGrid" class="row g-4 projects-grid">
-
-      <!-- Market Research Summarizer (AI App) -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ai" data-title="Market Research Summarizer" data-desc="AI-powered app for analyzing market trends, competitors, and customer feedback.">
+    <div class="row g-4 projects-grid" id="projectsGrid">
+      <!-- AI Tool -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ai">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img src="https://cdn.pixabay.com/photo/2018/01/15/07/51/artificial-intelligence-3082266_1280.jpg" alt="Market Research AI" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2018/01/15/07/51/artificial-intelligence-3082266_1280.jpg" alt="AI Research Tool" class="w-100" style="height:220px;object-fit:cover;">
           <div class="p-4">
             <h5 class="fw-bold mb-1">Market Research Summarizer</h5>
-            <p class="text-muted small mb-3">Transforms complex market data and customer reviews into concise, actionable summaries and competitor insights.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <button class="btn btn-outline-primary btn-sm view-btn"
-                      data-title="Market Research Summarizer"
-                      data-img="https://cdn.pixabay.com/photo/2018/01/15/07/51/artificial-intelligence-3082266_1280.jpg"
-                      data-desc="A custom AI app that summarizes reports, reviews and trends into short executive summaries, competitor snapshots and growth recommendations."
-                      data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
-            </div>
+            <p class="small text-muted">AI app that turns data into actionable business insights.</p>
+            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
           </div>
         </div>
       </div>
 
-      <!-- Event Management -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="web" data-title="Event Management Platform" data-desc="Web app for booking, promoting, and managing events easily.">
+      <!-- School Management -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="education">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img src="https://cdn.pixabay.com/photo/2016/10/29/08/33/audience-1776755_1280.jpg" alt="Event Platform" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2016/02/19/11/53/classroom-1209820_1280.jpg" alt="School Management System" class="w-100" style="height:220px;object-fit:cover;">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">Event Management Platform</h5>
-            <p class="text-muted small mb-3">Ticketing, promotions, and analytics — built to handle both intimate workshops and large public events.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <button class="btn btn-outline-primary btn-sm view-btn"
-                      data-title="Event Management Platform"
-                      data-img="https://cdn.pixabay.com/photo/2016/10/29/08/33/audience-1776755_1280.jpg"
-                      data-desc="A responsive event platform with ticketing, payment integration, automated reminders and attendance analytics."
-                      data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
-            </div>
+            <h5 class="fw-bold mb-1">Smart School Portal</h5>
+            <p class="small text-muted">A web app for managing students, results, and payments.</p>
+            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
           </div>
         </div>
       </div>
 
-      <!-- AI Support Assistant -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ai" data-title="AI Support Assistant" data-desc="Smart virtual agent that automates replies and improves customer experience.">
+      <!-- Business Website -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="business">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img src="https://cdn.pixabay.com/photo/2018/05/08/08/57/chatbot-3389624_1280.jpg" alt="AI Support Assistant" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2017/01/10/19/05/business-1966028_1280.jpg" alt="Business Website" class="w-100" style="height:220px;object-fit:cover;">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">AI Support Assistant</h5>
-            <p class="text-muted small mb-3">Context-aware chatbot integration that reduces response time and escalates complex issues to staff.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <button class="btn btn-outline-primary btn-sm view-btn"
-                      data-title="AI Support Assistant"
-                      data-img="https://cdn.pixabay.com/photo/2018/05/08/08/57/chatbot-3389624_1280.jpg"
-                      data-desc="Chatbot connected to CRM and ticketing to automate support, create tickets, and hand off to humans when needed."
-                      data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
-            </div>
+            <h5 class="fw-bold mb-1">Corporate Website</h5>
+            <p class="small text-muted">Modern business site showcasing company profile and services.</p>
+            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
           </div>
         </div>
       </div>
 
-      <!-- Digital Product Store -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="web" data-title="Digital Product Store Builder" data-desc="Empowers creators to sell digital goods with secure payments.">
+      <!-- E-Commerce Store -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="ecommerce">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img src="https://cdn.pixabay.com/photo/2017/06/29/00/58/online-store-2452808_1280.jpg" alt="Digital Store Builder" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2017/08/10/03/48/ecommerce-2614473_1280.jpg" alt="Ecommerce App" class="w-100" style="height:220px;object-fit:cover;">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">Digital Product Store Builder</h5>
-            <p class="text-muted small mb-3">Creator-focused stores with Paystack/Flutterwave, file hosting, and low-data optimizations.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <button class="btn btn-outline-primary btn-sm view-btn"
-                      data-title="Digital Product Store Builder"
-                      data-img="https://cdn.pixabay.com/photo/2017/06/29/00/58/online-store-2452808_1280.jpg"
-                      data-desc="A full-stack seller platform for digital goods: upload, manage and sell with local payment gateways and analytics."
-                      data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
-            </div>
+            <h5 class="fw-bold mb-1">Online Product Store</h5>
+            <p class="small text-muted">A responsive platform for creators to sell digital products.</p>
+            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
           </div>
         </div>
       </div>
 
-      <!-- Educational Game -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="game" data-title="Educational Game" data-desc="Interactive learning game for students.">
+      <!-- Hotel & Booking -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="hospitality">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img src="https://cdn.pixabay.com/photo/2020/03/23/18/37/kid-4969436_1280.jpg" alt="Educational Game" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2016/11/18/12/35/hotel-1831072_1280.jpg" alt="Hotel Booking Site" class="w-100" style="height:220px;object-fit:cover;">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">Educational Game</h5>
-            <p class="text-muted small mb-3">Offline-friendly learning game with leaderboards, progress tracking and teacher analytics.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <button class="btn btn-outline-primary btn-sm view-btn"
-                      data-title="Educational Game"
-                      data-img="https://cdn.pixabay.com/photo/2020/03/23/18/37/kid-4969436_1280.jpg"
-                      data-desc="A Unity-powered educational game with progress tracking and reward systems for young learners."
-                      data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
-            </div>
+            <h5 class="fw-bold mb-1">Hotel Booking Platform</h5>
+            <p class="small text-muted">Interactive booking site with room previews and live chat.</p>
+            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
           </div>
         </div>
       </div>
 
-      <!-- Smart Business Dashboard -->
-      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="web" data-title="Smart Business Dashboard" data-desc="All-in-one analytics dashboard for growing companies.">
+      <!-- Media Platform -->
+      <div class="col-md-6 col-lg-4 project-item fade-in-up" data-cats="media">
         <div class="project-card shadow-lg rounded-4 overflow-hidden hover-scale">
-          <img src="https://cdn.pixabay.com/photo/2017/08/10/03/08/dashboard-2618267_1280.jpg" alt="Business Dashboard" class="project-media w-100" style="height: 220px; object-fit: cover;">
+          <img loading="lazy" src="https://cdn.pixabay.com/photo/2017/06/29/09/34/music-2451059_1280.jpg" alt="Music Streaming Platform" class="w-100" style="height:220px;object-fit:cover;">
           <div class="p-4">
-            <h5 class="fw-bold mb-1">Smart Business Dashboard</h5>
-            <p class="text-muted small mb-3">Real-time analytics for sales, customers and campaigns — built for data-driven teams.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <button class="btn btn-outline-primary btn-sm view-btn"
-                      data-title="Smart Business Dashboard"
-                      data-img="https://cdn.pixabay.com/photo/2017/08/10/03/08/dashboard-2618267_1280.jpg"
-                      data-desc="Dashboard that unifies sales, marketing and customer data with easy-to-read visualizations and CSV export."
-                      data-link="#">View Case Study</button>
-              <a href="hire.html" class="btn btn-primary btn-sm">Hire Us</a>
-            </div>
+            <h5 class="fw-bold mb-1">Media & Music Hub</h5>
+            <p class="small text-muted">All-in-one platform for streaming, downloading, and sharing media.</p>
+            <a href="hire.html" class="btn btn-outline-primary btn-sm">View Case</a>
           </div>
         </div>
       </div>
-
-    </div>
-
-    <!-- load more placeholder (can be wired to fetch more items) -->
-    <div class="text-center load-more mt-4">
-      <button id="loadMoreBtn" class="btn btn-outline-secondary">Load more projects</button>
     </div>
   </div>
 </section>
 
-<!-- CASE STUDY MODAL -->
-<div class="modal fade" id="caseModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body p-4">
-        <div class="d-flex justify-content-between align-items-start mb-3">
-          <h4 id="caseTitle" class="mb-0"></h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <img id="caseImg" class="case-img" src="" alt="">
-        <p id="caseDesc" class="text-muted"></p>
-        <div class="d-flex gap-2 mt-3">
-          <a id="caseLink" href="#" target="_blank" class="btn btn-primary">Visit Project</a>
-          <a href="hire.html" class="btn btn-outline-dark ms-auto">Hire Our Team</a>
-        </div>
+<!-- Stats -->
+<section class="stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-3 stat">
+        <h3 data-count="120">0</h3><p>Projects</p>
+      </div>
+      <div class="col-6 col-md-3 stat">
+        <h3 data-count="75">0</h3><p>Clients</p>
+      </div>
+      <div class="col-6 col-md-3 stat">
+        <h3 data-count="8">0</h3><p>Countries</p>
+      </div>
+      <div class="col-6 col-md-3 stat">
+        <h3 data-count="5">0</h3><p>Awards</p>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer class="py-4 text-center">
   <div class="container">
-    <p class="mb-1">&copy; <span id="year2"></span> Estech Solutions</p>
-    <p class="small text-muted">Want this design? <a href="hire.html">Hire us</a> — we build custom sites & apps.</p>
+    <p class="mb-1">&copy; <span id="year"></span> Estech Solutions</p>
+    <p class="small text-muted">Made with 💙 by our team — <a href="hire.html">Hire us</a></p>
   </div>
 </footer>
 
-<!-- Scripts -->
+<!-- Back to Top -->
+<button id="backToTop" title="Go to top">↑</button>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   // Year
-  document.getElementById('year2').textContent = new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Filters logic
-  const chips = Array.from(document.querySelectorAll('.chip'));
-  let items = Array.from(document.querySelectorAll('.project-item'));
-  const searchInput = document.getElementById('searchInput');
-  const clearBtn = document.getElementById('searchClear');
-
-  function applyFilter(filter = 'all', q = '') {
-    const qLower = q.trim().toLowerCase();
-    items.forEach(it => {
-      const cats = it.getAttribute('data-cats') || '';
-      const title = (it.getAttribute('data-title') || '').toLowerCase();
-      const desc = (it.getAttribute('data-desc') || '').toLowerCase();
-      const matchesCat = filter === 'all' ? true : cats.split(',').includes(filter);
-      const matchesQuery = qLower === '' ? true : (title.includes(qLower) || desc.includes(qLower));
-      it.style.display = (matchesCat && matchesQuery) ? '' : 'none';
+  // Reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
     });
-  }
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      const f = chip.getAttribute('data-filter');
-      applyFilter(f, searchInput.value);
-    });
-  });
+  // Dark mode toggle
+  const body = document.body;
+  const darkToggle = document.getElementById('darkToggle');
+  const darkPref = localStorage.getItem('darkMode');
+  if (darkPref === 'true') { body.classList.add('dark-mode'); darkToggle.textContent='☀️ Light'; }
+  darkToggle.onclick = () => {
+    body.classList.toggle('dark-mode');
+    const enabled = body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', enabled);
+    darkToggle.textContent = enabled ? '☀️ Light' : '🌙 Dark';
+  };
 
-  searchInput.addEventListener('input', () => {
-    const active = document.querySelector('.chip.active').getAttribute('data-filter');
-    applyFilter(active, searchInput.value);
-  });
+  // Back to top
+  const backBtn = document.getElementById('backToTop');
+  window.onscroll = () => backBtn.style.display = window.scrollY > 200 ? 'grid' : 'none';
+  backBtn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
 
-  clearBtn.addEventListener('click', () => {
-    searchInput.value = '';
-    applyFilter(document.querySelector('.chip.active').getAttribute('data-filter'), '');
-  });
-
-  // Modal: event delegation so cloned items work without re-wiring
-  const projectsGrid = document.getElementById('projectsGrid');
-  const caseModalEl = document.getElementById('caseModal');
-  const caseTitle = document.getElementById('caseTitle');
-  const caseImg = document.getElementById('caseImg');
-  const caseDesc = document.getElementById('caseDesc');
-  const caseLink = document.getElementById('caseLink');
-  const bsModal = new bootstrap.Modal(caseModalEl);
-
-  projectsGrid.addEventListener('click', (e) => {
-    const btn = e.target.closest('.view-btn');
-    if (!btn) return;
-    const title = btn.getAttribute('data-title') || 'Case Study';
-    const img = btn.getAttribute('data-img') || '';
-    const desc = btn.getAttribute('data-desc') || '';
-    const link = btn.getAttribute('data-link') || '#';
-    caseTitle.textContent = title;
-    caseImg.src = img;
-    caseImg.alt = title;
-    caseDesc.textContent = desc;
-    caseLink.href = link;
-    bsModal.show();
-  });
-
-  // Load more (demo: clones first 3 items)
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
-  loadMoreBtn.addEventListener('click', () => {
-    const grid = document.getElementById('projectsGrid');
-    const existing = Array.from(grid.querySelectorAll('.project-item'));
-    const clones = existing.slice(0,3).map(el => el.cloneNode(true));
-    clones.forEach(clone => grid.appendChild(clone));
-    // refresh items list for filtering
-    items = Array.from(document.querySelectorAll('.project-item'));
-    // observe new items for scroll animation
-    observeAnimatedItems();
-  });
-
-  // Scroll animations using IntersectionObserver
-  const animatedItemsSelector = '.fade-in-up';
-  const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
-  let io = null;
-  function observeAnimatedItems() {
-    const nodes = document.querySelectorAll(animatedItemsSelector);
-    if (io) { nodes.forEach(n => io.observe(n)); return; }
-    io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          // also add class to inner card for stagger
-          const card = entry.target.querySelector('.project-card');
-          if (card) card.classList.add('in-view');
-          io.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-    nodes.forEach(n => io.observe(n));
-  }
-
-  // Initialize view
-  applyFilter('all', '');
-  observeAnimatedItems();
-</script>
-
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "9f5e956e-7020-4eb9-9d68-ab65ef7dc748",
+  // Counter animation
+  const counters = document.querySelectorAll('[data-count]');
+  const counterObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const el=e.target; let start=0; const end=parseInt(el.dataset.count);
+        const speed=Math.ceil(end/50);
+        const inc=()=>{start+=speed;if(start<end){el.textContent=start;requestAnimationFrame(inc);}else{el.textContent=end;}};
+        inc(); counterObserver.unobserve(el);
+      }
     });
   });
+  counters.forEach(c=>counterObserver.observe(c));
 </script>
 </body>
 </html>
