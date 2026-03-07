@@ -109,8 +109,9 @@
     a{text-decoration:none}
 
     /* NAV */
+    .navbar{background:rgba(2,6,23,.85)!important;backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
     .navbar-brand{font-weight:800;letter-spacing:0.6px}
-    .nav-link{font-weight:500;color:rgba(255,255,255,0.9) !important}
+    .nav-link{font-weight:500;color:rgba(255,255,255,0.92) !important}
 
     /* HERO / CAROUSEL */
     .hero-carousel{position:relative;height:92vh;min-height:520px;overflow:hidden;background:linear-gradient(135deg,#0f172a,#1e293b)}
@@ -152,6 +153,7 @@
 
     /* Sections styling */
     section{padding:6rem 0}
+    .panel-surface{background:#fff;border:1px solid rgba(15,23,42,.07);border-radius:16px;box-shadow:0 14px 32px rgba(2,6,23,.06)}
     .section-title{font-weight:800;margin-bottom:1rem}
     .lead-muted{color:var(--muted);font-size:1.06rem}
     .card-tilt{transition: transform .35s, box-shadow .35s}
@@ -192,7 +194,7 @@ body.loaded { opacity: 1; }
 <body>
 
 <!-- NAV -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
   <div class="container">
     <a class="navbar-brand" href="index.html">ESTECH</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -266,8 +268,9 @@ body.loaded { opacity: 1; }
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="container text-center">
-    <h2 class="section-title">About Estech Solutions</h2>
+  <div class="container panel-surface py-5">
+
+    <h2 class="section-title text-center">About Estech Solutions</h2>
     <p class="lead-muted mx-auto" style="max-width:900px">
       We design and build software that directly solves business and social problems. Our team combines engineering discipline, thoughtful UX,
       and scalable architecture to turn ideas into usable products — from MVPs and prototypes to production-grade systems.
