@@ -3,28 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Estech Solutions — AI Automation & Intelligent Software</title>
-  <meta name="description" content="Estech Solutions builds AI automation systems, product software, and intelligent platforms for modern businesses." />
-  <link rel="icon" type="image/png" href="icon.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Estech Solutions | AI Automation, Product Engineering & Intelligent Software</title>
+  <meta name="description" content="Estech Solutions builds AI automation systems, product software, and intelligent platforms that reduce manual work and accelerate business operations." />
+  <meta name="keywords" content="AI automation company, intelligent software development, product engineering, workflow automation, Estech Solutions" />
+  <meta name="author" content="Estech Solutions" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://estechsolutions.vercel.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Estech Solutions — AI Automation & Intelligent Software" />
+  <meta property="og:description" content="Product-led AI engineering for modern businesses. Build faster, automate operations, and scale with confidence." />
+  <meta property="og:url" content="https://estechsolutions.vercel.app/" />
+  <meta property="og:image" content="https://estechsolutions.vercel.app/icon.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Estech Solutions — AI Automation & Intelligent Software" />
+  <meta name="twitter:description" content="We design and build AI systems, automation platforms, and modern product software." />
+  <meta name="twitter:image" content="https://estechsolutions.vercel.app/icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Estech Solutions",
+    "url": "https://estechsolutions.vercel.app/",
+    "logo": "https://estechsolutions.vercel.app/icon.png",
+    "sameAs": [
+      "https://github.com/estechsolutions"
+    ],
+    "description": "AI automation and intelligent software company building scalable product systems."
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    :root{--bg:#050a17;--bg2:#0b1220;--surface:#101b32;--surface-2:#0d162a;--text:#e2e8f0;--muted:#9aa4b2;--accent:#3b82f6;--accent2:#8b5cf6;--success:#22c55e}
-    *{box-sizing:border-box} body{font-family:Inter,system-ui;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
-    .navbar{background:rgba(5,10,23,.72)!important;backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.2)}
-    .nav-link{color:rgba(226,232,240,.9)!important;font-weight:600}
-    .hero{padding:8rem 0 5rem;background:radial-gradient(circle at 80% 10%,rgba(59,130,246,.25),transparent 35%),radial-gradient(circle at 15% 40%,rgba(139,92,246,.2),transparent 35%)}
-    .hero h1{font-weight:900;font-size:clamp(2.1rem,5vw,4.2rem);line-height:1.02}
-    .lead-muted{color:var(--muted)}
-    .btn-main{background:linear-gradient(90deg,var(--accent),var(--accent2));border:0;color:#fff;font-weight:700}
-    .btn-main:hover{opacity:.95;color:#fff}
-    .panel{background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid rgba(148,163,184,.18);border-radius:18px;box-shadow:0 18px 38px rgba(0,0,0,.35)}
-    .stat{padding:1rem;text-align:center}.stat h4{font-weight:900;margin:0}.chip{background:rgba(59,130,246,.14);border:1px solid rgba(59,130,246,.35);color:#bfdbfe;border-radius:999px;padding:.3rem .8rem;font-size:.78rem;font-weight:700}
-    .section{padding:5.5rem 0}
-    .service{padding:1.4rem;height:100%}.icon{width:56px;height:56px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,#1d4ed8,#7c3aed);font-size:1.35rem}
-    .showcase{aspect-ratio:16/10;border-radius:14px;background:linear-gradient(140deg,#0b1220,#172554);padding:1rem;border:1px solid rgba(148,163,184,.18)}
-    .dash-row{display:flex;justify-content:space-between;color:#cbd5e1;margin:.5rem 0}.bar{height:8px;border-radius:99px;background:#1f2937;overflow:hidden}.bar>span{display:block;height:100%;background:linear-gradient(90deg,#3b82f6,#22d3ee)}
-    .footer{border-top:1px solid rgba(148,163,184,.2)}
+    :root{--bg:#050b19;--bg2:#0c1528;--surface:#101d37;--surface2:#0d172c;--text:#e2e8f0;--muted:#94a3b8;--line:rgba(148,163,184,.2);--accent:#3b82f6;--accent2:#8b5cf6;--ok:#22c55e}
+    body{font-family:Inter,system-ui;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
+    .navbar{background:rgba(5,11,25,.75)!important;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-link{color:rgba(226,232,240,.92)!important;font-weight:600}
+    .btn-primary-grad{background:linear-gradient(90deg,var(--accent),var(--accent2));border:0;color:#fff;font-weight:700}
+    .btn-primary-grad:hover{opacity:.96;color:#fff}
+    .hero{padding:8.2rem 0 5rem;background:radial-gradient(circle at 80% 10%,rgba(59,130,246,.28),transparent 36%),radial-gradient(circle at 12% 44%,rgba(139,92,246,.2),transparent 34%)}
+    .hero h1{font-size:clamp(2.3rem,5vw,4.5rem);font-weight:900;line-height:1.03}
+    .muted{color:var(--muted)}
+    .chip{display:inline-block;background:rgba(59,130,246,.14);border:1px solid rgba(59,130,246,.36);color:#bfdbfe;border-radius:999px;padding:.36rem .85rem;font-size:.78rem;font-weight:700}
+    .panel{background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+    .section{padding:5.2rem 0}
+    .kpi h3{margin:0;font-weight:900}.kpi small{color:var(--muted)}
+    .service,.value{height:100%;padding:1.45rem}
+    .ico{width:58px;height:58px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,#1d4ed8,#7c3aed);font-size:1.35rem}
+    .gridline{height:100%;background:linear-gradient(180deg,#0b1428,#0e1a32);border:1px solid var(--line);border-radius:14px;padding:1rem}
+    .bar{height:8px;background:#1f2937;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,#3b82f6,#22d3ee)}
+    .timeline{border-left:3px solid rgba(59,130,246,.5);padding-left:1rem;margin-left:.3rem}
+    .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(15,23,42,.25)}
+    .footer{border-top:1px solid var(--line)}
   </style>
 </head>
 <body>
@@ -37,7 +70,7 @@
         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="works.html">Products</a></li>
         <li class="nav-item"><a class="nav-link" href="hire.html">Hire Us</a></li>
-        <li class="nav-item"><a class="btn btn-main btn-sm ms-lg-2" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="btn btn-primary-grad btn-sm ms-lg-2" href="contact.html">Book a Strategy Call</a></li>
       </ul>
     </div>
   </div>
@@ -47,26 +80,29 @@
   <div class="container">
     <div class="row g-4 align-items-center">
       <div class="col-lg-7">
-        <span class="chip">AI SOFTWARE COMPANY</span>
-        <h1 class="mt-3">AI Automation & Intelligent Software for Modern Businesses</h1>
-        <p class="lead lead-muted mt-3" style="max-width:760px">Estech Solutions builds AI systems, automation platforms, and intelligent software that reduce manual work, increase execution speed, and improve operational visibility.</p>
+        <span class="chip">AI PRODUCT ENGINEERING STUDIO</span>
+        <h1 class="mt-3">Build AI Systems That Reduce Cost, Increase Speed, and Scale Operations</h1>
+        <p class="lead muted mt-3" style="max-width:760px">Estech Solutions helps growth-focused teams deploy AI automation, intelligent tools, and product software that drive measurable business outcomes.</p>
         <div class="d-flex flex-wrap gap-3 mt-4">
-          <a href="works.html" class="btn btn-main btn-lg">Explore Products</a>
-          <a href="hire.html" class="btn btn-outline-light btn-lg">Start a Project</a>
+          <a href="works.html" class="btn btn-primary-grad btn-lg">Explore Products</a>
+          <a href="hire.html" class="btn btn-outline-light btn-lg">Start Your Project</a>
         </div>
       </div>
       <div class="col-lg-5">
         <div class="panel p-4">
-          <h5 class="fw-bold">Operational Intelligence Snapshot</h5>
+          <h5 class="fw-bold">Executive Snapshot</h5>
           <div class="row g-2 mt-2">
-            <div class="col-4"><div class="panel stat"><h4>73%</h4><small class="lead-muted">Tasks Automated</small></div></div>
-            <div class="col-4"><div class="panel stat"><h4>3.1x</h4><small class="lead-muted">Faster Cycles</small></div></div>
-            <div class="col-4"><div class="panel stat"><h4>24/7</h4><small class="lead-muted">AI Runtime</small></div></div>
+            <div class="col-4"><div class="gridline text-center kpi"><h3>73%</h3><small>Manual Tasks Automated</small></div></div>
+            <div class="col-4"><div class="gridline text-center kpi"><h3>3.1x</h3><small>Faster Process Cycle</small></div></div>
+            <div class="col-4"><div class="gridline text-center kpi"><h3>24/7</h3><small>AI Runtime</small></div></div>
           </div>
-          <div class="showcase mt-3">
-            <div class="dash-row"><span>Workflow Completion</span><strong>81%</strong></div><div class="bar"><span style="width:81%"></span></div>
-            <div class="dash-row mt-3"><span>Support Ticket Resolution</span><strong>68%</strong></div><div class="bar"><span style="width:68%"></span></div>
-            <div class="dash-row mt-3"><span>Data Processing Queue</span><strong>92%</strong></div><div class="bar"><span style="width:92%"></span></div>
+          <div class="gridline mt-3">
+            <div class="d-flex justify-content-between"><span>Workflow Completion</span><strong>81%</strong></div>
+            <div class="bar"><span style="width:81%"></span></div>
+            <div class="d-flex justify-content-between mt-3"><span>Resolution Performance</span><strong>68%</strong></div>
+            <div class="bar"><span style="width:68%"></span></div>
+            <div class="d-flex justify-content-between mt-3"><span>Data Throughput</span><strong>92%</strong></div>
+            <div class="bar"><span style="width:92%"></span></div>
           </div>
         </div>
       </div>
@@ -74,13 +110,22 @@
   </div>
 </header>
 
+<section class="trust py-4">
+  <div class="container d-flex flex-wrap justify-content-between gap-3 text-center text-lg-start">
+    <span class="muted">Product-led execution</span>
+    <span class="muted">Architecture-first delivery</span>
+    <span class="muted">AI + workflow automation</span>
+    <span class="muted">Long-term support</span>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
     <div class="panel p-4 p-md-5 text-center">
-      <p class="chip mb-2">FLAGSHIP PRODUCT</p>
-      <h2 class="fw-bold">Estech Autonomous Workforce (EAW)</h2>
-      <p class="lead-muted mx-auto" style="max-width:850px">EAW is an AI workforce platform that deploys intelligent AI workers to execute tasks, run workflows, and support operations with minimal supervision.</p>
-      <a href="works.html" class="btn btn-main btn-lg mt-2">View Product</a>
+      <span class="chip">FLAGSHIP PRODUCT</span>
+      <h2 class="fw-bold mt-2">Estech Autonomous Workforce (EAW)</h2>
+      <p class="muted mx-auto" style="max-width:860px">EAW is an AI workforce platform that deploys intelligent AI workers to execute tasks, handle operations, generate reports, and run workflow automations with oversight controls.</p>
+      <a href="works.html" class="btn btn-primary-grad btn-lg mt-2">View Product Roadmap</a>
     </div>
   </div>
 </section>
@@ -88,26 +133,49 @@
 <section id="services" class="section pt-0">
   <div class="container">
     <div class="text-center mb-4">
-      <h2 class="fw-bold">What We Build</h2>
-      <p class="lead-muted">Enterprise-grade software designed for speed, reliability, and measurable ROI.</p>
+      <h2 class="fw-bold">What We Deliver</h2>
+      <p class="muted">Practical, production-ready systems built for modern operations.</p>
     </div>
     <div class="row g-4">
-      <div class="col-md-4"><div class="panel service"><div class="icon mb-3">🤖</div><h5 class="fw-bold">AI Automation Systems</h5><p class="lead-muted">Automate repetitive operations, approvals, and business workflows at scale.</p></div></div>
-      <div class="col-md-4"><div class="panel service"><div class="icon mb-3">🧠</div><h5 class="fw-bold">Intelligent Internal Tools</h5><p class="lead-muted">Custom dashboards and decision systems tailored to your teams and processes.</p></div></div>
-      <div class="col-md-4"><div class="panel service"><div class="icon mb-3">⚙️</div><h5 class="fw-bold">Product Engineering</h5><p class="lead-muted">From MVP to production, we ship robust software with a product-first mindset.</p></div></div>
+      <div class="col-md-4"><div class="panel service"><div class="ico mb-3">🤖</div><h5 class="fw-bold">AI Automation Systems</h5><p class="muted">Automate approvals, routing, and repetitive back-office tasks to reduce operational overhead.</p></div></div>
+      <div class="col-md-4"><div class="panel service"><div class="ico mb-3">📊</div><h5 class="fw-bold">Intelligence Dashboards</h5><p class="muted">Turn fragmented data into decision-grade insights with custom analytics and monitoring panels.</p></div></div>
+      <div class="col-md-4"><div class="panel service"><div class="ico mb-3">⚙️</div><h5 class="fw-bold">Product Engineering</h5><p class="muted">From discovery to launch, we design and build scalable software products with clean architecture.</p></div></div>
     </div>
   </div>
 </section>
 
 <section class="section pt-0">
   <div class="container">
-    <div class="panel p-4 p-md-5">
-      <h3 class="fw-bold text-center">Currently Building</h3>
-      <div class="row g-4 mt-1 text-center">
-        <div class="col-md-4"><h6 class="fw-bold">EAW Workforce</h6><p class="lead-muted mb-0">AI workforce management platform.</p></div>
-        <div class="col-md-4"><h6 class="fw-bold">AI Tools Directory</h6><p class="lead-muted mb-0">Curated platform for discovering practical AI tools.</p></div>
-        <div class="col-md-4"><h6 class="fw-bold">Automation APIs</h6><p class="lead-muted mb-0">APIs that enable workflow automation across systems.</p></div>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="panel value">
+          <h4 class="fw-bold">Why Teams Choose Estech</h4>
+          <ul class="muted mb-0">
+            <li>Business-first product strategy and technical planning</li>
+            <li>Transparent milestone delivery and communication</li>
+            <li>Reliability, security, and maintainable code standards</li>
+            <li>Hands-on post-launch support and iteration</li>
+          </ul>
+        </div>
       </div>
+      <div class="col-lg-6">
+        <div class="panel value">
+          <h4 class="fw-bold">Currently Building</h4>
+          <div class="timeline"><strong>EAW Workforce</strong><p class="muted mb-2">Autonomous AI workforce management platform.</p></div>
+          <div class="timeline mt-2"><strong>AI Tools Directory</strong><p class="muted mb-2">Curated ecosystem for AI tools by use-case.</p></div>
+          <div class="timeline mt-2"><strong>Automation APIs</strong><p class="muted mb-0">Developer-friendly APIs for workflow orchestration.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="panel p-4 p-md-5 text-center">
+      <h3 class="fw-bold">Ready to Build Something Serious?</h3>
+      <p class="muted">Book a strategy call and get a practical technical plan for your AI product or automation initiative.</p>
+      <a href="contact.html" class="btn btn-primary-grad btn-lg">Book Strategy Call</a>
     </div>
   </div>
 </section>
@@ -115,7 +183,7 @@
 <footer class="footer py-4 text-center">
   <div class="container">
     <p class="mb-1">&copy; <span id="year"></span> Estech Solutions. All rights reserved.</p>
-    <p class="small lead-muted mb-0">LinkedIn • Twitter • <a href="https://github.com/estechsolutions">GitHub</a></p>
+    <p class="small muted mb-0">LinkedIn • X • <a href="https://github.com/estechsolutions">GitHub</a></p>
   </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
