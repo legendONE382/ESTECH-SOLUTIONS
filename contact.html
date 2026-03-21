@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact Estech Solutions</title>
-  <meta name="description" content="Talk to Estech Solutions about AI automation, custom software, and product engineering." />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <title>Contact | Estech Solutions</title>
+  <meta name="description" content="Contact Estech Solutions to discuss AI automation, product engineering, and intelligent software projects." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://estechsolutions.vercel.app/contact.html" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    :root{--bg:#020617;--bg2:#0b1220;--surface:#0f172a;--text:#e2e8f0;--muted:#94a3b8}
+    :root{--bg:#020617;--bg2:#0b1220;--surface:#0f172a;--text:#e2e8f0;--muted:#94a3b8;--line:rgba(148,163,184,.2)}
     body{font-family:Inter;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
-    .navbar{background:rgba(2,6,23,.82)!important;backdrop-filter:blur(8px)}
-    .panel{background:linear-gradient(180deg,#0f172a,#101b32);border:1px solid rgba(148,163,184,.2);border-radius:16px}
-    .chat{height:280px;overflow:auto;padding:1rem}
-    .msg{background:rgba(148,163,184,.14);border:1px solid rgba(148,163,184,.25);padding:.6rem .85rem;border-radius:.7rem;margin-bottom:.5rem;max-width:85%}
+    .navbar{background:rgba(2,6,23,.82)!important;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .panel{background:linear-gradient(180deg,#0f172a,#101b32);border:1px solid var(--line);border-radius:16px}
+    .chat{height:290px;overflow:auto;padding:1rem}
+    .msg{background:rgba(148,163,184,.14);border:1px solid rgba(148,163,184,.25);padding:.62rem .88rem;border-radius:.7rem;margin-bottom:.55rem;max-width:85%}
     .u{margin-left:auto;background:rgba(59,130,246,.18);border-color:rgba(59,130,246,.35)}
   </style>
 </head>
@@ -34,8 +36,8 @@
 </nav>
 
 <section class="container py-5 text-center">
-  <h1 class="fw-bold">Talk to the Estech Team</h1>
-  <p class="text-secondary">Share what you want to build and we’ll propose the best execution path.</p>
+  <h1 class="fw-bold">Let’s Build Your AI Product</h1>
+  <p class="text-secondary">Share your goals. We’ll respond with the smartest practical approach for execution.</p>
 </section>
 
 <main class="container pb-5">
@@ -44,10 +46,10 @@
       <div class="panel p-4">
         <h5 class="fw-bold">AI Assistant</h5>
         <div id="chat" class="chat panel mt-2">
-          <div class="msg">Hello! I can guide your next step. What are you planning to build?</div>
+          <div class="msg">Hi! I can help you prepare your project brief. What are you trying to build?</div>
         </div>
         <div class="d-flex gap-2 mt-3">
-          <input id="in" class="form-control" placeholder="Type message">
+          <input id="in" class="form-control" placeholder="Type your message" />
           <button class="btn btn-primary" onclick="sendMsg()">Send</button>
         </div>
       </div>
@@ -55,11 +57,12 @@
     <div class="col-lg-6">
       <div class="panel p-4">
         <h5 class="fw-bold">Contact Form</h5>
+        <p class="text-secondary mb-3">Share a short project summary and expected timeline.</p>
         <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="row g-3 mt-1">
-          <div class="col-md-6"><input required name="name" class="form-control" placeholder="Name"></div>
-          <div class="col-md-6"><input type="email" required name="email" class="form-control" placeholder="Email"></div>
-          <div class="col-12"><input name="subject" class="form-control" placeholder="Subject"></div>
-          <div class="col-12"><textarea required name="message" class="form-control" rows="6" placeholder="Tell us about your project"></textarea></div>
+          <div class="col-md-6"><input required name="name" class="form-control" placeholder="Name" /></div>
+          <div class="col-md-6"><input type="email" required name="email" class="form-control" placeholder="Email" /></div>
+          <div class="col-12"><input name="subject" class="form-control" placeholder="Subject" /></div>
+          <div class="col-12"><textarea required name="message" class="form-control" rows="6" placeholder="Tell us about your project, timeline, and goals"></textarea></div>
           <div class="col-12"><button class="btn btn-success btn-lg w-100">Send Message</button></div>
         </form>
       </div>
@@ -72,18 +75,18 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  document.getElementById('year').textContent=new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
   function sendMsg(){
-    const i=document.getElementById('in');
-    const v=i.value.trim();
+    const i = document.getElementById('in');
+    const v = i.value.trim();
     if(!v) return;
-    const c=document.getElementById('chat');
+    const c = document.getElementById('chat');
     c.innerHTML += `<div class='msg u'>${v}</div>`;
     i.value='';
     setTimeout(()=>{
-      c.innerHTML += `<div class='msg'>Great. Share your timeline and budget so our team can recommend the best implementation plan.</div>`;
-      c.scrollTop=c.scrollHeight;
-    },600);
+      c.innerHTML += `<div class='msg'>Great context. Please include business goals, users, timeline, and budget range so our team can respond accurately.</div>`;
+      c.scrollTop = c.scrollHeight;
+    }, 600);
   }
 </script>
 </body>
