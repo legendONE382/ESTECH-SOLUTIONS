@@ -1,600 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Schema Markup (Google Rich Results) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-"name": "Estech AI Solutions",
-"alternateName": "Estech Solutions",
-  "url": "https://estechsolutions.vercel.app/",
-  "logo": "https://estechsolutions.vercel.app/icon.png",
-  "areaServed": {
-  "@type": "Country",
-  "name": "Nigeria"
-},
-
-  "sameAs": [
-    "https://facebook.com/estechsolutions",
-    "https://twitter.com/estechsolutions",
-    "https://www.linkedin.com/company/estechsolutions"
-  ],
-  "description": "Estech Solutions creates apps, websites, and AI tools that solve real-world tech problems.",
-  "founder": {
-    "@type": "Person",
-    "name": "Emmanuel Jackson"
-  }
-}
-</script>
-
-<!-- Favicon -->
-<link rel="icon" href="https://estechsolutions.vercel.app/icon.png" type="image/x-icon">
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Estech AI Solutions | AI Tools, Web Apps & Automation</title>
+  <title>Estech Solutions | AI Automation & Product Engineering Studio</title>
+  <meta name="description" content="Replace manual operations with structured AI systems. Estech designs and deploys AI automation, autonomous workflows, and scalable internal tools." />
+  <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://estechsolutions.vercel.app/" />
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
-  <meta name="google-site-verification" content="xbSDnvWUpVwwPQIOFKmeJu-5jykqXZ5RTL8RRe88FfE" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Replace Manual Operations with AI Systems That Work 24/7" />
+  <meta property="og:description" content="Structured AI automation and product engineering for growth-focused teams." />
+  <meta property="og:url" content="https://estechsolutions.vercel.app/" />
+  <meta property="og:image" content="https://estechsolutions.vercel.app/icon.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Estech Solutions","url":"https://estechsolutions.vercel.app/","founder":{"@type":"Person","name":"Emmanuel uchenna"},"logo":"https://estechsolutions.vercel.app/icon.png"}</script>
 
-
-    <!-- SEO Meta Tags -->
-  <meta name="description" content="Estech AI Solutions builds AI-powered tools, web apps, automations, and digital platforms that solve real-world problems." />
-  <meta name="keywords" content="Estech Solutions, software company, website design, app development, AI tools, tech solutions, Nigeria, hire developers, game development, Estech software">
-  <meta name="author" content="Estech Solutions">
-
-  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-  <meta property="og:title" content="Estech Solutions — We Solve Tech Problems">
-  <meta property="og:description" content="We build world-class apps, websites, and AI tools for businesses and creators.">
-  <meta property="og:image" content="https://estechsolutions.vercel.app/images/og-preview.jpg"> <!-- optional: replace with your image -->
-  <meta property="og:url" content="https://estechsolutions.vercel.app">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Estech Solutions — Building the Future of Tech">
-  <meta name="twitter:description" content="Hire Estech Solutions to build your next big app, game, or website.">
-  <meta name="twitter:image" content="https://estechsolutions.vercel.app/images/og-preview.jpg">
-
-    <!-- Facebook Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-     fbq('init', '816794354059989');  // <-- Replace with your Pixel ID
-     fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=816794354059989&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- Google Site Verification -->
-  <meta name="google-site-verification" content="xbSDnvWUpVwwPQIOFKmeJu-5jykqXZ5RTL8RRe88FfE" />
-  
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2CSM88HT3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P2CSM88HT3');
-</script>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
-  <!-- Site Favicon -->
-<link rel="icon" type="image/png" href="icon.png">
-<link rel="shortcut icon" type="image/png" href="icon.png">
-
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      --accent:#0d6efd;
-      --accent-2:#7c3aed;
-      --bg-dark:#0b1220;
-      --muted:#6c757d;
-    }
-    html,body{height:100%;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;scroll-behavior:smooth}
-    a{text-decoration:none}
-
-    /* NAV */
-    .navbar-brand{font-weight:800;letter-spacing:0.6px}
-    .nav-link{font-weight:500;color:rgba(255,255,255,0.9) !important}
-
-    /* HERO / CAROUSEL */
-    .hero-carousel{position:relative;height:92vh;min-height:520px;overflow:hidden}
-    .hero-carousel .slide {
-      position:absolute;inset:0;background-size:cover;background-position:center center;
-      opacity:0;transform:scale(1.03);transition:opacity .9s ease, transform .9s ease;
-      filter:brightness(.55);
-    }
-    .hero-carousel .slide.active{opacity:1;transform:scale(1)}
-    .hero-overlay{
-      position:absolute;inset:0; background:linear-gradient(180deg, rgba(11,18,32,0.35), rgba(11,18,32,0.65));
-      pointer-events:none;
-    }
-    .hero-inner{
-      position:relative;z-index:3;display:flex;height:100%;align-items:center;
-      justify-content:center;text-align:center;padding:1.5rem;
-    }
-    .hero-title{font-weight:900;color:white; font-size: clamp(2rem, 4vw, 4rem); line-height:1;}
-    .hero-sub{color:rgba(255,255,255,0.9);margin-top:.6rem;font-size:1.05rem}
-    .hero-cta .btn{min-width:170px;padding:0.85rem 1.2rem;font-weight:700;border-radius:.6rem}
-
-    /* Dots */
-    .hero-dots{
-      position:absolute;left:50%;transform:translateX(-50%);bottom:28px;z-index:4;display:flex;gap:10px;
-    }
-    .hero-dots button{
-      width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.35);border:0;outline:0;transition:all .25s;
-      box-shadow:0 4px 14px rgba(0,0,0,.35);
-    }
-    .hero-dots button.active{width:34px;border-radius:20px;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 8px 30px rgba(124,58,237,.25)}
-
-    /* subtle animated underline */
-    .underline-anim{display:inline-block;position:relative}
-    .underline-anim::after{
-      content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-6px;height:4px;width:0; background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      border-radius:4px;transition:width .45s;
-    }
-    .underline-anim:hover::after{width:60%}
-
-    /* Sections styling */
-    section{padding:6rem 0}
-    .section-title{font-weight:800;margin-bottom:1rem}
-    .lead-muted{color:var(--muted);font-size:1.06rem}
-    .card-tilt{transition: transform .35s, box-shadow .35s}
-    .card-tilt:hover{transform: translateY(-10px) rotate(-.25deg); box-shadow: 0 18px 40px rgba(10,10,30,.12)}
-
-    /* Testimonials */
-    .quote{font-style:italic;color:#111;font-weight:600}
-    .testimonial-card{border-radius:12px;padding:1.6rem;background:linear-gradient(180deg,#fff,#f8fbff);box-shadow:0 12px 30px rgba(11,18,32,.06)}
-
-    /* Hire CTA */
-    .hire-cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border-radius:14px;padding:2.2rem;box-shadow:0 18px 40px rgba(13,110,253,.12)}
-    .hire-cta h3{color:white}
-
-    /* Contact form */
-    .form-card{padding:1.6rem;border-radius:12px;background:white;box-shadow:0 12px 30px rgba(11,18,32,.06)}
-
-    /* responsive tweaks */
-    @media (max-width:768px){
-      .hero-dots{bottom:16px}
-      .hero-sub{font-size:0.98rem}
-      section{padding:3.5rem 0}
-    }
-    .hero-inner { animation: fadeInUp 1.2s ease both; }
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-body { opacity: 0; transition: opacity 0.8s ease-in; }
-body.loaded { opacity: 1; }
-
+    :root{--bg:#0a1220;--bg2:#101a2f;--surface:#121f36;--surface2:#152741;--text:#e5e7eb;--muted:#9aa6b8;--line:#2a3952;--accent:#2563eb;--accent2:#6366f1}
+    body{font-family:Inter,system-ui;background:radial-gradient(circle at 85% 0%,rgba(99,102,241,.16),transparent 32%),radial-gradient(circle at 10% 8%,rgba(37,99,235,.12),transparent 26%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
+    .navbar{background:rgba(10,18,32,.92)!important;border-bottom:1px solid var(--line)}
+    .nav-link{color:#dbe3ef !important;font-weight:600}
+    .btn-main{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:0;font-weight:700;padding:.9rem 1.35rem;box-shadow:0 12px 24px rgba(37,99,235,.32)}
+    .btn-main:hover{color:#fff;filter:brightness(.97)}
+    .hero{position:relative;overflow:hidden;padding:6.2rem 0 3.8rem}
+    .hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80');background-size:cover;background-position:center;opacity:.25;filter:blur(2px);z-index:0;transform:scale(1.04)}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,10,25,.85),rgba(10,20,40,.95));z-index:1}
+    .hero-overlay::after{content:'';position:absolute;inset:-20% -10%;background:radial-gradient(circle at 20% 30%,rgba(99,102,241,.20),transparent 42%),radial-gradient(circle at 80% 20%,rgba(37,99,235,.16),transparent 38%);animation:heroShift 20s linear infinite}
+    .hero-content{position:relative;z-index:2}
+    .hero h1{font-size:clamp(2.25rem,5vw,4.5rem);font-weight:900;line-height:1.02;max-width:900px;position:relative}
+    .hero h1::before{content:'';position:absolute;z-index:-1;left:-8%;top:-20%;width:60%;height:170%;background:radial-gradient(circle,rgba(99,102,241,.22),transparent 65%)}
+    @keyframes heroShift{0%{transform:translateX(0)}50%{transform:translateX(2%)}100%{transform:translateX(0)}}
+    .muted{color:var(--muted)}
+    .panel{background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 32px rgba(2,6,23,.32)}
+    .section{padding:4.5rem 0}
+    .service{padding:1.4rem;height:100%;transition:all .2s ease}.service:hover{transform:translateY(-5px);box-shadow:0 20px 35px rgba(2,6,23,.35)}
+    .kpi-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(15,23,42,.3)}
+    .proof-item{padding:1.1rem;border:1px solid var(--line);border-radius:12px;background:#0f1b31}
+    .footer{border-top:1px solid var(--line)}
+    @media (max-width:768px){.hero{padding:5.4rem 0 3.2rem}.hero .btn{width:100%}.hero-bg{filter:blur(1px)}}
   </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html">ESTECH</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand fw-bold" href="index.html">ESTECH</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="works.html">AI Solutions</a></li>
-        <li class="nav-item"><a class="nav-link" href="hire.html">Hire Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="#client-dashboard">Dashboard</a></li>
-
-        <li class="nav-item"><a class="nav-link btn btn-sm btn-outline-light ms-2" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="works.html">View Our Work</a></li>
+        <li class="nav-item"><a class="btn btn-main btn-sm ms-lg-2" href="contact.html">Get an Automation Audit</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- HERO (Manual JS slideshow with dots) -->
-<header class="hero-carousel" id="heroCarousel" aria-hidden="false">
-  <!-- slides: background images -->
-  <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1800&q=80&auto=format&fit=crop');"></div>
-  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1800&q=80&auto=format&fit=crop');"></div>
-  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1800&q=80&auto=format&fit=crop');"></div>
-
-  <!-- overlay -->
-  <div class="hero-overlay"></div>
-
-  <!-- content -->
-  <div class="hero-inner container">
-    <div class="w-100">
-      <div class="mb-3">
-        <span class="badge bg-white text-dark rounded-pill px-3 py-2" style="font-weight:700;">NEW • Launching Solutions</span>
-      </div>
-     <h1 class="hero-title underline-anim">
-  Building AI Systems That Work While You Sleep
-</h1>
-<p class="hero-sub mb-4">
-  We design AI-powered tools, automation systems, and intelligent platforms that help businesses scale, save time, and reduce costs.
-</p>
-
-      <div class="d-flex justify-content-center gap-3 hero-cta flex-wrap">
-        <a href="works.html" class="btn btn-lg btn-primary">Explore AI Solutions</a>
-        <a href="hire.html" class="btn btn-lg btn-outline-light" style="background:rgba(255,255,255,0.06);color:white;border-radius:.7rem">Hire Us</a>
-        <a href="contact.html" class="btn btn-lg btn-success">Contact & Chat</a>
-      </div>
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <p class="text-uppercase small muted mb-2">AI Automation & Product Engineering Studio</p>
+    <h1>Replace Manual Operations with AI Systems That Work 24/7.</h1>
+    <p class="lead muted mt-3" style="max-width:760px">We design and deploy structured AI automation, autonomous workflows, and scalable internal tools for growth-focused teams.</p>
+    <div class="d-flex flex-wrap gap-3 mt-4">
+      <a href="contact.html" class="btn btn-main btn-lg">Get an Automation Audit</a>
+      <a href="works.html" class="btn btn-outline-light btn-lg">View Our Work</a>
     </div>
-  </div>
-
-  <!-- dots -->
-  <div class="hero-dots" id="heroDots" aria-hidden="false">
-    <button class="active" data-index="0" aria-label="Slide 1"></button>
-    <button data-index="1" aria-label="Slide 2"></button>
-    <button data-index="2" aria-label="Slide 3"></button>
   </div>
 </header>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container text-center">
-    <h2 class="section-title">About Estech Solutions</h2>
-    <p class="lead-muted mx-auto" style="max-width:900px">
-      We design and build software that directly solves business and social problems. Our team combines engineering discipline, thoughtful UX,
-      and scalable architecture to turn ideas into usable products — from MVPs and prototypes to production-grade systems.
-    </p>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="bg-light">
+<section class="section pt-0">
   <div class="container">
-    <h2 class="section-title text-center">What We Do</h2>
-    <div class="row g-4 mt-4">
-      <div class="col-md-4">
-        <div class="card card-tilt p-3 h-100">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=60&auto=format&fit=crop" class="card-img-top rounded mb-3" alt="">
-          <div class="card-body">
-            <h5 class="fw-bold">AI-Powered Platforms & APIs</h5>
-            <p class="text-muted">Secure, fast AI-Powered platforms and APIs that scale with your business.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-tilt p-3 h-100">
-          <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?w=900&q=60&auto=format&fit=crop" class="card-img-top rounded mb-3" alt="">
-          <div class="card-body">
-            <h5 class="fw-bold">AI-Enhanced Applications</h5>
-
-            <p class="text-muted">Cross-platform or native AI-Enhanced applications designed for retention and performance.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-tilt p-3 h-100">
-          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900&q=60&auto=format&fit=crop" class="card-img-top rounded mb-3" alt="">
-          <div class="card-body">
-            <h5 class="fw-bold">Autonomous AI Systems</h5>
-
-            <p class="text-muted">Intelligent automation and AI-driven features that add measurable value.</p>
-          </div>
-        </div>
-      </div>
+    <div class="panel p-4 p-md-5">
+      <h2 class="fw-bold">If Your Team Is Still Doing This Manually…</h2>
+      <ul class="muted mb-0">
+        <li>Manual approvals slowing execution</li>
+        <li>Repetitive reporting eating hours weekly</li>
+        <li>Data scattered across disconnected tools</li>
+        <li>Teams depending on spreadsheets</li>
+        <li>Operational bottlenecks blocking scale</li>
+      </ul>
     </div>
   </div>
 </section>
-  <section id="ai-solutions">
+
+<section class="kpi-strip py-4">
+  <div class="container d-flex flex-wrap justify-content-between gap-3 text-center text-lg-start">
+    <span class="muted">24/7 Automated Systems</span>
+    <span class="muted">Modular AI Architecture</span>
+    <span class="muted">Production-Ready Deployments</span>
+    <span class="muted">Built for Growth-Focused Teams</span>
+  </div>
+</section>
+
+<section id="services" class="section">
   <div class="container">
-    <h2 class="section-title text-center">Our AI Solutions</h2>
-    <p class="lead-muted text-center mx-auto" style="max-width:900px">
-      We build practical AI systems that automate work, improve decisions, and unlock new growth opportunities.
-    </p>
-
-    <div class="row g-4 mt-4">
-      <div class="col-md-4">
-        <div class="card card-tilt p-4 h-100">
-          <h5 class="fw-bold">🤖 AI Agents & Automation</h5>
-          <p class="text-muted">
-            Autonomous AI agents that handle workflows, tasks, and operations with minimal human input.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card card-tilt p-4 h-100">
-          <h5 class="fw-bold">📊 AI Dashboards & Analytics</h5>
-          <p class="text-muted">
-            Turn raw data into insights using AI-powered analytics and decision systems.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card card-tilt p-4 h-100">
-          <h5 class="fw-bold">🧠 Custom AI Tools</h5>
-          <p class="text-muted">
-            Tailor-made AI tools designed around your business, market, or users.
-          </p>
-        </div>
-      </div>
+    <div class="text-center mb-4"><h2 class="fw-bold">What We Engineer</h2></div>
+    <div class="row g-4">
+      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">AI Workflow Automation</h5><p class="muted mb-1">Structured automation of approvals and reporting.</p><p class="mb-0"><strong>Impact:</strong> Replace 10+ hours of manual weekly work.</p></div></div>
+      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">Autonomous Task Agents</h5><p class="muted mb-1">Deploy AI agents for defined internal operations.</p><p class="mb-0"><strong>Impact:</strong> Faster execution with governance controls.</p></div></div>
+      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">Intelligence Dashboards</h5><p class="muted mb-1">Turn scattered data into decision-grade visibility.</p><p class="mb-0"><strong>Impact:</strong> Reduce blind spots in critical workflows.</p></div></div>
+      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">Scalable Product Architecture</h5><p class="muted mb-1">Modular systems designed for long-term maintainability.</p><p class="mb-0"><strong>Impact:</strong> Avoid fragile automation debt.</p></div></div>
     </div>
   </div>
 </section>
 
-
-<!-- SOLUTIONS TEASER -->
-<section id="solutions">
-  <div class="container text-center">
-    <h2 class="section-title">We Create Solutions to Tech Problems</h2>
-    <p class="lead-muted mx-auto" style="max-width:880px">Examples: improve conversion, automate manual workflows, create internal tools, build consumer apps, or modernize legacy systems. View full case studies in our Solutions page.</p>
-    <div class="mt-4">
-      <a href="works.html" class="btn btn-primary btn-lg me-2">See Our Solutions</a>
-      <a href="hire.html" class="btn btn-outline-secondary btn-lg">Request a Quote</a>
-    </div>
-  </div>
-</section>
-<section id="flagship" class="bg-dark text-white">
-  <div class="container text-center">
-    <span class="badge bg-light text-dark px-3 py-2 rounded-pill mb-3">
-      Flagship Product
-    </span>
-
-    <h2 class="section-title">Estech Autonomous Workforce (EAW)</h2>
-
-    <p class="lead-muted mx-auto" style="max-width:900px">
-      A platform that allows businesses to deploy AI workers that handle tasks, workflows,
-      and decision-making automatically — reducing cost and human overload.
-    </p>
-
-    <div class="mt-4">
-      <a href="works.html" class="btn btn-light btn-lg me-2">View Product</a>
-      <span class="badge bg-warning text-dark ms-2">In Development</span>
-    </div>
-  </div>
-</section>
-
-  <!-- CLIENT DASHBOARD -->
-<section id="client-dashboard" class="bg-light">
+<section class="section pt-0">
   <div class="container">
-    <div class="row align-items-center g-5">
-      
-      <!-- Text -->
-      <div class="col-md-6">
-        <span class="badge bg-primary mb-3">📊 Client Dashboard</span>
-        <h2 class="section-title">
-          Manage Projects. Track AI. See Results.
-        </h2>
-        <p class="lead-muted">
-          Our upcoming client dashboard gives you real-time visibility into your
-          projects, AI systems, performance metrics, and delivery progress —
-          all in one secure place.
-        </p>
-
-        <ul class="lead-muted">
-          <li>✔ Project status & milestones</li>
-          <li>✔ AI system performance insights</li>
-          <li>✔ Reports, analytics & updates</li>
-          <li>✔ Secure client-only access</li>
-        </ul>
-
-        <div class="mt-4">
-          <span class="badge bg-warning text-dark me-2">Coming Soon</span>
-          <a href="contact.html" class="btn btn-outline-primary ms-2">
-            Request Early Access
-          </a>
-        </div>
-      </div>
-
-      <!-- Visual Card -->
-      <div class="col-md-6">
-        <div class="card card-tilt p-4 shadow-lg">
-          <h5 class="fw-bold mb-3">Dashboard Preview</h5>
-
-          <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted">Active Projects</span>
-            <strong>3</strong>
-          </div>
-
-          <div class="progress mb-3" style="height:8px;">
-            <div class="progress-bar" style="width:70%"></div>
-          </div>
-
-          <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted">AI Tasks Automated</span>
-            <strong>1,248</strong>
-          </div>
-
-          <div class="progress mb-3" style="height:8px;">
-            <div class="progress-bar bg-success" style="width:85%"></div>
-          </div>
-
-          <div class="d-flex justify-content-between">
-            <span class="text-muted">System Health</span>
-            <span class="badge bg-success">Optimal</span>
-          </div>
-        </div>
-      </div>
-
+    <div class="row g-4">
+      <div class="col-lg-6"><div class="panel p-4 h-100"><h4 class="fw-bold">Why Teams Choose Estech</h4><p class="mb-1"><strong>1. Structured Systems, Not Experiments</strong></p><p class="muted">Production-grade AI with governance and stability.</p><p class="mb-1"><strong>2. Built for Scale</strong></p><p class="muted">Every automation is designed to evolve with your team.</p><p class="mb-1"><strong>3. Long-Term Architecture</strong></p><p class="muted mb-0">No duct-tape workflows. Clean modular design.</p></div></div>
+      <div class="col-lg-6"><div class="panel p-4 h-100"><h4 class="fw-bold">Recent Systems Built</h4><div class="proof-item mb-2">Internal AI Workflow Engine</div><div class="proof-item mb-2">Autonomous Reporting Bot</div><div class="proof-item">Multi-Source Analytics Dashboard</div><p class="muted mt-3 mb-0">More service pages: <a href="ai-automation-for-saas.html">AI Automation for SaaS</a>, <a href="ai-workflow-systems.html">AI Workflow Systems</a>, <a href="ai-agents-for-operations.html">AI Agents for Operations</a>.</p></div></div>
     </div>
   </div>
 </section>
 
-
-<!-- WHY CHOOSE -->
-<section class="bg-dark text-white">
+<section class="section pt-0">
   <div class="container">
-    <div class="row align-items-center gy-4">
-      <div class="col-md-6">
-        <h3 class="section-title">Why Choose Us?</h3>
-        <ul class="list-unstyled lead-muted">
-          <li class="mb-2">✔ Product-first mindset — we ship features that matter.</li>
-          <li class="mb-2">✔ Transparent pricing & predictable timelines.</li>
-          <li class="mb-2">✔ Dedicated support & long-term partnerships.</li>
-        </ul>
-        <a href="hire.html" class="btn btn-light mt-3">Hire Our Team</a>
-      </div>
-      <div class="col-md-6">
-        <div class="hire-cta">
-          <h3>Start your project</h3>
-          <p class="lead-muted">Tell us the problem — we’ll propose the right solution.</p>
-          <a href="hire.html" class="btn btn-dark btn-lg">Get a Free Proposal</a>
-        </div>
-      </div>
+    <div class="panel p-4 p-md-5 text-center">
+      <h3 class="fw-bold">Ready to Replace Manual Operations?</h3>
+      <p class="muted">Book a systems consultation and get a clear technical roadmap for automation.</p>
+      <a href="contact.html" class="btn btn-main btn-lg">Analyze My Operations</a>
+      <p class="mt-3 mb-0"><a href="works.html">Or explore our systems →</a></p>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="py-5">
-  <div class="container">
-    <h2 class="section-title text-center">What People Say</h2>
-    <div class="row g-4 mt-4">
-      <div class="col-md-4">
-        <div class="testimonial-card text-center">
-          <p class="quote">“Estech turned our vision into a product faster than expected.”</p>
-          <p class="mb-0"><strong>— Anna R, Founder</strong></p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial-card text-center">
-          <p class="quote">“Clear communication, fast iterations, great results.”</p>
-          <p class="mb-0"><strong>— Mark T, Product Lead</strong></p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial-card text-center">
-          <p class="quote">“Our conversion doubled after their redesign.”</p>
-          <p class="mb-0"><strong>— Sarah K, eCommerce</strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="section pt-0">
+  <div class="container"><div class="panel p-4"><h4 class="fw-bold">Leadership</h4><p class="mb-1"><strong>Emmanuel uchenna</strong></p><p class="muted mb-0">Founder & AI Product Engineer — focused on practical AI systems for real operational outcomes.</p></div></div>
 </section>
 
-<!-- CONTACT (small form on homepage) -->
-<section id="contact" class="bg-light">
+<footer class="footer py-4">
   <div class="container">
-    <h2 class="section-title text-center">Contact & Send a Quick Message</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <!-- replace `YOUR_FORMSPREE_ID` with your Formspree ID to receive emails -->
-        <form class="form-card" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <input name="name" class="form-control" placeholder="Your name" required>
-            </div>
-            <div class="col-md-6">
-              <input name="email" type="email" class="form-control" placeholder="Your email" required>
-            </div>
-            <div class="col-12">
-              <input name="subject" class="form-control" placeholder="Subject (e.g., Project, Job, Support)">
-            </div>
-            <div class="col-12">
-              <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your project or problem" required></textarea>
-            </div>
-            <div class="col-12 text-center">
-              <button class="btn btn-primary btn-lg" type="submit">Send Message</button>
-            </div>
-          </div>
-        </form>
-        <p class="text-center mt-3 text-muted small">Prefer live chat or AI assistance? Visit <a href="contact.html">Contact</a> for our assistant and extended options.</p>
-      </div>
+    <div class="row g-3 align-items-start">
+      <div class="col-md-6"><p class="mb-1 fw-semibold">Estech Solutions</p><p class="small muted mb-0">Lagos, Nigeria</p><p class="small muted mb-0">Email: contact@estechsolutions.com</p></div>
+      <div class="col-md-6 text-md-end"><p class="small mb-1"><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a></p><p class="small mb-1"><a href="#">LinkedIn</a> • <a href="https://github.com/estechsolutions">GitHub</a></p><p class="small muted mb-0">&copy; <span id="year"></span> Estech Solutions. All rights reserved.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="text-center py-4">
-  <div class="container">
-    <p class="mb-1">&copy; <span id="year"></span> Estech Solutions. All rights reserved.</p>
-    <p class="small text-muted">Follow us: <a href="#" class="link-primary">LinkedIn</a> • <a href="#" class="link-primary">Twitter</a></p>
   </div>
 </footer>
 
-<!-- Bootstrap & JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-  // set year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Custom slideshow logic (auto fade + dots) — nicer control than default
-  (function(){
-    const slides = Array.from(document.querySelectorAll('.hero-carousel .slide'));
-    const dots = Array.from(document.querySelectorAll('#heroDots button'));
-    let idx = 0;
-    let timer = null;
-    const interval = 5000; // 5s
-
-    function goTo(i){
-      slides.forEach((s, k) => s.classList.toggle('active', k===i));
-      dots.forEach((d, k) => d.classList.toggle('active', k===i));
-      idx = i;
-    }
-
-    function next(){
-      goTo((idx+1) % slides.length);
-    }
-
-    // wire dots
-    dots.forEach(btn => btn.addEventListener('click', e => {
-      const i = parseInt(btn.getAttribute('data-index'));
-      goTo(i);
-      restart();
-    }));
-
-    // autoplay
-    function start(){ timer = setInterval(next, interval); }
-    function stop(){ clearInterval(timer); timer = null; }
-    function restart(){ stop(); start(); }
-
-    // pause on hover
-    const hero = document.getElementById('heroCarousel');
-    hero.addEventListener('mouseenter', stop);
-    hero.addEventListener('mouseleave', start);
-
-    window.addEventListener("load", () => document.body.classList.add("loaded"));
-
-
-    // init
-    goTo(0);
-    start();
-  })();
-</script>
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "9f5e956e-7020-4eb9-9d68-ab65ef7dc748",
-    });
-  });
-</script>
-  
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
-  <!-- Smooth Fade-In Effect -->
-<script>
-  window.addEventListener("load", () => document.body.classList.add("loaded"));
-</script>
-
 </html>
-
-
-
-
-
-
-
-
-
