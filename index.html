@@ -18,117 +18,118 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    :root{--bg:#0a1220;--bg2:#101a2f;--surface:#121f36;--surface2:#152741;--text:#e5e7eb;--muted:#9aa6b8;--line:#2a3952;--accent:#2563eb;--accent2:#6366f1}
-    body{font-family:Inter,system-ui;background:radial-gradient(circle at 85% 0%,rgba(99,102,241,.16),transparent 32%),radial-gradient(circle at 10% 8%,rgba(37,99,235,.12),transparent 26%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
-    .navbar{background:rgba(10,18,32,.92)!important;border-bottom:1px solid var(--line)}
-    .nav-link{color:#dbe3ef !important;font-weight:600}
-    .btn-main{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:0;font-weight:700;padding:.9rem 1.35rem;box-shadow:0 12px 24px rgba(37,99,235,.32)}
-    .btn-main:hover{color:#fff;filter:brightness(.97)}
-    .hero{position:relative;overflow:hidden;padding:6.2rem 0 3.8rem}
-    .hero-bg{position:absolute;inset:0;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%201600%20900%27%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%230b1220%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23162946%27/%3E%0A%20%20%3C/linearGradient%3E%0A%3C/defs%3E%0A%3Crect%20width%3D%271600%27%20height%3D%27900%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Cg%20stroke%3D%27%237dd3fc%27%20stroke-opacity%3D%270.26%27%20stroke-width%3D%271.2%27%20fill%3D%27none%27%3E%0A%20%20%3Cpath%20d%3D%27M120%20720%20L320%20520%20L520%20600%20L760%20430%20L980%20520%20L1240%20380%20L1460%20470%27/%3E%0A%20%20%3Cpath%20d%3D%27M80%20340%20L300%20260%20L520%20330%20L760%20220%20L960%20290%20L1180%20230%20L1440%20320%27/%3E%0A%20%20%3Cpath%20d%3D%27M160%20540%20L360%20410%20L560%20470%20L790%20360%20L1020%20430%20L1260%20300%20L1500%20390%27/%3E%0A%3C/g%3E%0A%3Cg%20fill%3D%27%23c4b5fd%27%20fill-opacity%3D%270.22%27%3E%0A%20%20%3Ccircle%20cx%3D%27320%27%20cy%3D%27520%27%20r%3D%278%27/%3E%3Ccircle%20cx%3D%27520%27%20cy%3D%27600%27%20r%3D%277%27/%3E%3Ccircle%20cx%3D%27760%27%20cy%3D%27430%27%20r%3D%278%27/%3E%0A%20%20%3Ccircle%20cx%3D%27980%27%20cy%3D%27520%27%20r%3D%277%27/%3E%3Ccircle%20cx%3D%271240%27%20cy%3D%27380%27%20r%3D%278%27/%3E%3Ccircle%20cx%3D%27300%27%20cy%3D%27260%27%20r%3D%277%27/%3E%0A%20%20%3Ccircle%20cx%3D%27760%27%20cy%3D%27220%27%20r%3D%278%27/%3E%3Ccircle%20cx%3D%271180%27%20cy%3D%27230%27%20r%3D%277%27/%3E%3Ccircle%20cx%3D%27790%27%20cy%3D%27360%27%20r%3D%278%27/%3E%0A%20%20%3Ccircle%20cx%3D%271260%27%20cy%3D%27300%27%20r%3D%277%27/%3E%0A%3C/g%3E%0A%3C/svg%3E');background-size:cover;background-position:center;opacity:.25;filter:blur(2px);z-index:0;transform:scale(1.04)}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,10,25,.85),rgba(10,20,40,.95));z-index:1}
-    .hero-overlay::after{content:'';position:absolute;inset:-20% -10%;background:radial-gradient(circle at 20% 30%,rgba(99,102,241,.20),transparent 42%),radial-gradient(circle at 80% 20%,rgba(37,99,235,.16),transparent 38%);animation:heroShift 20s linear infinite}
-    .hero-content{position:relative;z-index:2}
-    .hero h1{font-size:clamp(2.25rem,5vw,4.5rem);font-weight:900;line-height:1.02;max-width:900px;position:relative}
-    .hero h1::before{content:'';position:absolute;z-index:-1;left:-8%;top:-20%;width:60%;height:170%;background:radial-gradient(circle,rgba(99,102,241,.22),transparent 65%)}
-    @keyframes heroShift{0%{transform:translateX(0)}50%{transform:translateX(2%)}100%{transform:translateX(0)}}
-    .muted{color:var(--muted)}
-    .panel{background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 32px rgba(2,6,23,.32)}
-    .section{padding:4.5rem 0}
-    .service{padding:1.4rem;height:100%;transition:all .2s ease}.service:hover{transform:translateY(-5px);box-shadow:0 20px 35px rgba(2,6,23,.35)}
-    .kpi-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(15,23,42,.3)}
-    .proof-item{padding:1.1rem;border:1px solid var(--line);border-radius:12px;background:#0f1b31}
-    .footer{border-top:1px solid var(--line)}
-    @media (max-width:768px){.hero{padding:5.4rem 0 3.2rem}.hero .btn{width:100%}.hero-bg{filter:blur(1px)}}
+    :root{--bg:#05070b;--bg2:#09111f;--surface:#0d1625;--surface2:#111d31;--text:#f8fafc;--muted:#a7b0c0;--line:#223047;--accent:#76b900;--accent2:#22c55e;--cyan:#38bdf8;--shadow:0 24px 70px rgba(0,0,0,.42)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Inter,system-ui;background:radial-gradient(circle at 72% 0%,rgba(118,185,0,.16),transparent 28%),radial-gradient(circle at 12% 12%,rgba(56,189,248,.10),transparent 24%),linear-gradient(180deg,var(--bg),var(--bg2) 58%,#060a12);color:var(--text)}
+    a{color:#a7f3d0}.navbar{background:rgba(5,7,11,.92)!important;border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(18px)}.navbar-brand{letter-spacing:.06em}.brand-mark{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#061006;margin-right:.55rem;font-weight:900}.nav-link{color:#e5e7eb !important;font-weight:700}.nav-link:hover{color:#bef264!important}.btn-main{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#061006;border:0;font-weight:900;padding:.9rem 1.35rem;box-shadow:0 14px 34px rgba(118,185,0,.28)}.btn-main:hover{color:#061006;filter:brightness(1.04);transform:translateY(-1px)}.btn-ghost{border:1px solid rgba(255,255,255,.24);color:#fff;font-weight:800;padding:.9rem 1.35rem}.btn-ghost:hover{border-color:var(--accent);color:#d9f99d;background:rgba(118,185,0,.08)}
+    .hero{position:relative;overflow:hidden;padding:6.8rem 0 4.8rem;min-height:760px;display:flex;align-items:center}.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.76) 42%,rgba(0,0,0,.45) 100%),radial-gradient(circle at 79% 45%,rgba(118,185,0,.24),transparent 34%);z-index:0}.grid-bg{position:absolute;inset:0;opacity:.32;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,#000,transparent 88%)}.hero-content{position:relative;z-index:2}.eyebrow{display:inline-flex;gap:.55rem;align-items:center;color:#d9f99d;font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}.pulse{width:.65rem;height:.65rem;border-radius:99px;background:var(--accent);box-shadow:0 0 0 8px rgba(118,185,0,.16)}.hero h1{font-size:clamp(2.6rem,6vw,5.7rem);font-weight:900;line-height:.95;letter-spacing:-.06em;max-width:930px}.hero .lead{font-size:clamp(1.08rem,2vw,1.45rem);line-height:1.65;max-width:780px}.muted{color:var(--muted)}
+    .system-visual{position:relative;min-height:520px}.orb{position:absolute;right:4%;top:8%;width:min(92%,620px);aspect-ratio:1;border-radius:34px;background:linear-gradient(145deg,rgba(15,23,42,.92),rgba(8,13,23,.72));border:1px solid rgba(190,242,100,.28);box-shadow:var(--shadow);overflow:hidden;transform:perspective(900px) rotateX(58deg) rotateZ(-38deg)}.orb::before{content:"";position:absolute;inset:10%;border:2px solid rgba(118,185,0,.62);border-radius:28px;box-shadow:0 0 28px rgba(118,185,0,.45),inset 0 0 30px rgba(118,185,0,.16)}.node{position:absolute;width:118px;padding:.75rem;border-radius:16px;background:#0b1220;border:1px solid rgba(118,185,0,.5);box-shadow:0 16px 40px rgba(0,0,0,.4);font-size:.78rem;font-weight:800}.n1{left:8%;top:20%}.n2{left:38%;top:11%}.n3{right:10%;top:35%}.n4{left:22%;bottom:16%}.n5{right:24%;bottom:12%}.chip-wall{position:absolute;right:12%;top:0;display:grid;grid-template-columns:repeat(5,42px);gap:8px;transform:rotate(-15deg)}.chip{height:34px;border:1px solid rgba(56,189,248,.35);background:rgba(15,23,42,.84);border-radius:7px;box-shadow:0 0 18px rgba(56,189,248,.12)}
+    .section{padding:5.2rem 0}.section-title{font-size:clamp(2rem,4vw,3.6rem);font-weight:900;letter-spacing:-.04em}.panel{background:linear-gradient(180deg,rgba(17,29,49,.96),rgba(10,18,32,.96));border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.feature{height:100%;padding:1.5rem;transition:.22s ease}.feature:hover{transform:translateY(-6px);border-color:rgba(118,185,0,.55)}.iconbox{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(118,185,0,.12);border:1px solid rgba(118,185,0,.32);color:#bef264;font-weight:900}.kpi-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(5,7,11,.6)}.kpi strong{display:block;font-size:2rem;color:#fff}.workflow-step{position:relative;padding-left:3.3rem}.workflow-step::before{content:attr(data-step);position:absolute;left:0;top:0;width:2.25rem;height:2.25rem;border-radius:999px;background:var(--accent);color:#07120a;display:grid;place-items:center;font-weight:900}.proof-item{padding:1rem;border:1px solid var(--line);border-radius:14px;background:#0b1220}.industry{min-height:150px}.footer{border-top:1px solid var(--line);background:#05070b}@media(max-width:991px){.hero{min-height:auto;padding:5.8rem 0 3.8rem}.system-visual{min-height:420px}.orb{right:auto;left:4%;width:92%}.chip-wall{display:none}}@media(max-width:768px){.hero .btn{width:100%}.section{padding:3.6rem 0}.system-visual{display:none}}
   </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">ESTECH</a>
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html"><span class="brand-mark">E</span>ESTECH</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="works.html">View Our Work</a></li>
-        <li class="nav-item"><a class="btn btn-main btn-sm ms-lg-2" href="contact.html">Get an Automation Audit</a></li>
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <li class="nav-item"><a class="nav-link" href="#platform">Platform</a></li>
+        <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+        <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+        <li class="nav-item"><a class="nav-link" href="works.html">Work</a></li>
+        <li class="nav-item"><a class="btn btn-main btn-sm ms-lg-2" href="contact.html">Start AI Roadmap</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="grid-bg" aria-hidden="true"></div>
   <div class="container hero-content">
-    <p class="text-uppercase small muted mb-2">AI Automation & Product Engineering Studio</p>
-    <h1>Replace Manual Operations with AI Systems That Work 24/7.</h1>
-    <p class="lead muted mt-3" style="max-width:760px">We design and deploy structured AI automation, autonomous workflows, and scalable internal tools for growth-focused teams.</p>
-    <div class="d-flex flex-wrap gap-3 mt-4">
-      <a href="contact.html" class="btn btn-main btn-lg">Get an Automation Audit</a>
-      <a href="works.html" class="btn btn-outline-light btn-lg">View Our Work</a>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <p class="eyebrow mb-3"><span class="pulse"></span> Enterprise AI Automation Studio</p>
+        <h1>Agent-ready systems for teams that need more than a basic website.</h1>
+        <p class="lead muted mt-4">Estech Solutions designs the strategy, interfaces, automations, and production architecture that turn disconnected operations into repeatable AI-powered workflows.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="contact.html" class="btn btn-main btn-lg">Build My AI Roadmap</a>
+          <a href="#platform" class="btn btn-ghost btn-lg">Explore the Platform</a>
+        </div>
+        <div class="row g-3 mt-4">
+          <div class="col-6 col-md-4"><div class="kpi"><strong>24/7</strong><span class="muted">Workflow execution</span></div></div>
+          <div class="col-6 col-md-4"><div class="kpi"><strong>4x</strong><span class="muted">Faster handoffs</span></div></div>
+          <div class="col-12 col-md-4"><div class="kpi"><strong>0</strong><span class="muted">Duct-tape automations</span></div></div>
+        </div>
+      </div>
+      <div class="col-lg-5 system-visual" aria-label="AI workflow visualization">
+        <div class="chip-wall" aria-hidden="true"><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span><span class="chip"></span></div>
+        <div class="orb"><div class="node n1">CRM Data</div><div class="node n2">AI Triage</div><div class="node n3">Human Approval</div><div class="node n4">Dashboards</div><div class="node n5">Agent Actions</div></div>
+      </div>
     </div>
   </div>
 </header>
 
-<section class="section pt-0">
+<section class="kpi-strip py-4">
+  <div class="container d-flex flex-wrap justify-content-between gap-4 text-center text-lg-start">
+    <span class="muted">Automation Strategy</span><span class="muted">Agent Workflows</span><span class="muted">Decision Dashboards</span><span class="muted">Secure Product Engineering</span>
+  </div>
+</section>
+
+<section id="platform" class="section">
+  <div class="container">
+    <div class="row align-items-end mb-4 g-3"><div class="col-lg-8"><p class="eyebrow"><span class="pulse"></span> Platform Depth</p><h2 class="section-title">A complete operating layer for AI-enabled companies.</h2></div><div class="col-lg-4"><p class="muted mb-0">We upgrade your digital presence from a shallow brochure into a serious conversion engine with technical proof, solution pathways, and a clear delivery model.</p></div></div>
+    <div class="row g-4">
+      <div class="col-md-6 col-xl-3"><div class="panel feature"><div class="iconbox mb-3">01</div><h5 class="fw-bold">AI Readiness Audit</h5><p class="muted mb-0">Map bottlenecks, data sources, risks, and the highest-value workflows before building.</p></div></div>
+      <div class="col-md-6 col-xl-3"><div class="panel feature"><div class="iconbox mb-3">02</div><h5 class="fw-bold">Agent Architecture</h5><p class="muted mb-0">Define prompts, tools, memory, permissions, escalation paths, and guardrails.</p></div></div>
+      <div class="col-md-6 col-xl-3"><div class="panel feature"><div class="iconbox mb-3">03</div><h5 class="fw-bold">Workflow Deployment</h5><p class="muted mb-0">Ship automations connected to CRMs, inboxes, sheets, databases, and internal apps.</p></div></div>
+      <div class="col-md-6 col-xl-3"><div class="panel feature"><div class="iconbox mb-3">04</div><h5 class="fw-bold">Optimization Loop</h5><p class="muted mb-0">Track performance, identify failure points, and improve the system after launch.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="solutions" class="section pt-0">
   <div class="container">
     <div class="panel p-4 p-md-5">
-      <h2 class="fw-bold">If Your Team Is Still Doing This Manually…</h2>
-      <ul class="muted mb-0">
-        <li>Manual approvals slowing execution</li>
-        <li>Repetitive reporting eating hours weekly</li>
-        <li>Data scattered across disconnected tools</li>
-        <li>Teams depending on spreadsheets</li>
-        <li>Operational bottlenecks blocking scale</li>
-      </ul>
+      <div class="row g-5 align-items-center"><div class="col-lg-5"><p class="eyebrow"><span class="pulse"></span> Solutions</p><h2 class="section-title">Built for measurable operational outcomes.</h2><p class="muted">Each engagement turns manual work into a governed system your team can trust.</p></div>
+      <div class="col-lg-7"><div class="row g-3">
+        <div class="col-md-6"><div class="proof-item h-100"><h5>Sales & Support Agents</h5><p class="muted mb-0">Lead enrichment, inbox triage, proposal drafts, customer follow-up, and routing.</p></div></div>
+        <div class="col-md-6"><div class="proof-item h-100"><h5>Operations Command Center</h5><p class="muted mb-0">Dashboards that unify tasks, revenue signals, pipeline health, and exceptions.</p></div></div>
+        <div class="col-md-6"><div class="proof-item h-100"><h5>Document Intelligence</h5><p class="muted mb-0">Extract, summarize, classify, and route documents with approval controls.</p></div></div>
+        <div class="col-md-6"><div class="proof-item h-100"><h5>Internal Tools</h5><p class="muted mb-0">Secure web apps for teams outgrowing spreadsheets and scattered SaaS tools.</p></div></div>
+      </div></div></div>
     </div>
   </div>
 </section>
 
-<section class="kpi-strip py-4">
-  <div class="container d-flex flex-wrap justify-content-between gap-3 text-center text-lg-start">
-    <span class="muted">24/7 Automated Systems</span>
-    <span class="muted">Modular AI Architecture</span>
-    <span class="muted">Production-Ready Deployments</span>
-    <span class="muted">Built for Growth-Focused Teams</span>
+<section class="section pt-0">
+  <div class="container">
+    <div class="row g-4"><div class="col-lg-4"><h2 class="section-title">How we deliver.</h2><p class="muted">A practical process designed to reduce risk and prove value fast.</p></div><div class="col-lg-8"><div class="panel p-4 p-md-5">
+      <div class="workflow-step mb-4" data-step="1"><h5 class="fw-bold">Discover the bottleneck</h5><p class="muted mb-0">Interview stakeholders, audit tools, and define the business metric to improve.</p></div>
+      <div class="workflow-step mb-4" data-step="2"><h5 class="fw-bold">Prototype the agent workflow</h5><p class="muted mb-0">Create a working proof with sample data, prompts, tools, and human review steps.</p></div>
+      <div class="workflow-step mb-4" data-step="3"><h5 class="fw-bold">Deploy production infrastructure</h5><p class="muted mb-0">Connect live systems with monitoring, permissions, and documentation.</p></div>
+      <div class="workflow-step" data-step="4"><h5 class="fw-bold">Improve with real usage</h5><p class="muted mb-0">Measure adoption and continuously tune automations for accuracy and speed.</p></div>
+    </div></div></div>
   </div>
 </section>
 
-<section id="services" class="section">
+<section id="industries" class="section pt-0">
   <div class="container">
-    <div class="text-center mb-4"><h2 class="fw-bold">What We Engineer</h2></div>
+    <div class="text-center mb-4"><p class="eyebrow justify-content-center"><span class="pulse"></span> Industries</p><h2 class="section-title">AI systems for modern service teams.</h2></div>
     <div class="row g-4">
-      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">AI Workflow Automation</h5><p class="muted mb-1">Structured automation of approvals and reporting.</p><p class="mb-0"><strong>Impact:</strong> Replace 10+ hours of manual weekly work.</p></div></div>
-      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">Autonomous Task Agents</h5><p class="muted mb-1">Deploy AI agents for defined internal operations.</p><p class="mb-0"><strong>Impact:</strong> Faster execution with governance controls.</p></div></div>
-      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">Intelligence Dashboards</h5><p class="muted mb-1">Turn scattered data into decision-grade visibility.</p><p class="mb-0"><strong>Impact:</strong> Reduce blind spots in critical workflows.</p></div></div>
-      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">Scalable Product Architecture</h5><p class="muted mb-1">Modular systems designed for long-term maintainability.</p><p class="mb-0"><strong>Impact:</strong> Avoid fragile automation debt.</p></div></div>
+      <div class="col-md-6 col-xl-3"><div class="panel feature industry"><h5>SaaS</h5><p class="muted mb-0">Onboarding, support ops, churn signals, and customer success automations.</p></div></div>
+      <div class="col-md-6 col-xl-3"><div class="panel feature industry"><h5>Agencies</h5><p class="muted mb-0">Client reporting, campaign QA, proposal systems, and delivery tracking.</p></div></div>
+      <div class="col-md-6 col-xl-3"><div class="panel feature industry"><h5>Professional Services</h5><p class="muted mb-0">Research workflows, document processing, knowledge bases, and approvals.</p></div></div>
+      <div class="col-md-6 col-xl-3"><div class="panel feature industry"><h5>Operations Teams</h5><p class="muted mb-0">Ticket routing, data cleanup, performance dashboards, and recurring tasks.</p></div></div>
     </div>
   </div>
 </section>
 
 <section class="section pt-0">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-6"><div class="panel p-4 h-100"><h4 class="fw-bold">Why Teams Choose Estech</h4><p class="mb-1"><strong>1. Structured Systems, Not Experiments</strong></p><p class="muted">Production-grade AI with governance and stability.</p><p class="mb-1"><strong>2. Built for Scale</strong></p><p class="muted">Every automation is designed to evolve with your team.</p><p class="mb-1"><strong>3. Long-Term Architecture</strong></p><p class="muted mb-0">No duct-tape workflows. Clean modular design.</p></div></div>
-      <div class="col-lg-6"><div class="panel p-4 h-100"><h4 class="fw-bold">Recent Systems Built</h4><div class="proof-item mb-2">Internal AI Workflow Engine</div><div class="proof-item mb-2">Autonomous Reporting Bot</div><div class="proof-item">Multi-Source Analytics Dashboard</div><p class="muted mt-3 mb-0">More service pages: <a href="ai-automation-for-saas.html">AI Automation for SaaS</a>, <a href="ai-workflow-systems.html">AI Workflow Systems</a>, <a href="ai-agents-for-operations.html">AI Agents for Operations</a>.</p></div></div>
-    </div>
-  </div>
+  <div class="container"><div class="panel p-4 p-md-5 text-center"><p class="eyebrow justify-content-center"><span class="pulse"></span> Start Here</p><h2 class="section-title">Ready to compete with serious AI companies?</h2><p class="muted mx-auto" style="max-width:720px">Book an automation audit and receive a prioritized roadmap showing what to automate, what to rebuild, and what to measure first.</p><a href="contact.html" class="btn btn-main btn-lg">Get an Automation Audit</a><p class="mt-3 mb-0"><a href="works.html">Or explore our systems →</a></p></div></div>
 </section>
 
 <section class="section pt-0">
-  <div class="container">
-    <div class="panel p-4 p-md-5 text-center">
-      <h3 class="fw-bold">Ready to Replace Manual Operations?</h3>
-      <p class="muted">Book a systems consultation and get a clear technical roadmap for automation.</p>
-      <a href="contact.html" class="btn btn-main btn-lg">Analyze My Operations</a>
-      <p class="mt-3 mb-0"><a href="works.html">Or explore our systems →</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="section pt-0">
-  <div class="container"><div class="panel p-4"><h4 class="fw-bold">Leadership</h4><p class="mb-1"><strong>Emmanuel uchenna</strong></p><p class="muted mb-0">Founder & AI Product Engineer — focused on practical AI systems for real operational outcomes.</p></div></div>
+  <div class="container"><div class="panel p-4"><h4 class="fw-bold">Leadership</h4><p class="mb-1"><strong>Emmanuel uchenna</strong></p><p class="muted mb-0">Founder & AI Product Engineer — focused on practical AI systems, conversion-grade product experiences, and real operational outcomes.</p></div></div>
 </section>
 
 <footer class="footer py-4">
