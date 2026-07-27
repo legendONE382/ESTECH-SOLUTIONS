@@ -1,3 +1,5 @@
+const yearElement = document.getElementById('year');
+if (yearElement) yearElement.textContent = new Date().getFullYear();
 const nav = document.querySelector('.navbar');
 const onScroll = () => {
   if (nav) nav.classList.toggle('is-scrolled', window.scrollY > 18);
