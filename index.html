@@ -3,144 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Estech Solutions | AI Automation & Product Engineering Studio</title>
-  <meta name="description" content="Replace manual operations with structured AI systems. Estech designs and deploys AI automation, autonomous workflows, and scalable internal tools." />
+  <title>Estech Solutions | AI Operations Partner for Logistics Companies</title>
+  <meta name="description" content="Reduce repetitive work, paperwork, response delays, and operational blind spots for logistics and supply chain companies." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://estechsolutions.vercel.app/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Replace Manual Operations with AI Systems That Work 24/7" />
-  <meta property="og:description" content="Structured AI automation and product engineering for growth-focused teams." />
-  <meta property="og:url" content="https://estechsolutions.vercel.app/" />
-  <meta property="og:image" content="https://estechsolutions.vercel.app/icon.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Estech Solutions","url":"https://estechsolutions.vercel.app/","founder":{"@type":"Person","name":"Emmanuel uchenna"},"logo":"https://estechsolutions.vercel.app/icon.png"}</script>
-
+  <meta property="og:title" content="Estech Solutions | AI Operations Partner for Logistics Companies" />
+  <meta property="og:description" content="Reduce repetitive work, paperwork, response delays, and operational blind spots for logistics and supply chain companies." />
   <link rel="icon" type="image/png" href="icon.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    :root{--bg:#0a1220;--bg2:#101a2f;--surface:#121f36;--surface2:#152741;--text:#e5e7eb;--muted:#9aa6b8;--line:#2a3952;--accent:#2563eb;--accent2:#6366f1}
-    body{font-family:Inter,system-ui;background:radial-gradient(circle at 85% 0%,rgba(99,102,241,.16),transparent 32%),radial-gradient(circle at 10% 8%,rgba(37,99,235,.12),transparent 26%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
-    .navbar{background:rgba(10,18,32,.92)!important;border-bottom:1px solid var(--line)}
-    .nav-link{color:#dbe3ef !important;font-weight:600}
-    .btn-main{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:0;font-weight:700;padding:.9rem 1.35rem;box-shadow:0 12px 24px rgba(37,99,235,.32)}
-    .btn-main:hover{color:#fff;filter:brightness(.97)}
-    .hero{position:relative;overflow:hidden;padding:6.2rem 0 3.8rem}
-    .hero-bg{position:absolute;inset:0;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%201600%20900%27%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%230b1220%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23162946%27/%3E%0A%20%20%3C/linearGradient%3E%0A%3C/defs%3E%0A%3Crect%20width%3D%271600%27%20height%3D%27900%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Cg%20stroke%3D%27%237dd3fc%27%20stroke-opacity%3D%270.26%27%20stroke-width%3D%271.2%27%20fill%3D%27none%27%3E%0A%20%20%3Cpath%20d%3D%27M120%20720%20L320%20520%20L520%20600%20L760%20430%20L980%20520%20L1240%20380%20L1460%20470%27/%3E%0A%20%20%3Cpath%20d%3D%27M80%20340%20L300%20260%20L520%20330%20L760%20220%20L960%20290%20L1180%20230%20L1440%20320%27/%3E%0A%20%20%3Cpath%20d%3D%27M160%20540%20L360%20410%20L560%20470%20L790%20360%20L1020%20430%20L1260%20300%20L1500%20390%27/%3E%0A%3C/g%3E%0A%3Cg%20fill%3D%27%23c4b5fd%27%20fill-opacity%3D%270.22%27%3E%0A%20%20%3Ccircle%20cx%3D%27320%27%20cy%3D%27520%27%20r%3D%278%27/%3E%3Ccircle%20cx%3D%27520%27%20cy%3D%27600%27%20r%3D%277%27/%3E%3Ccircle%20cx%3D%27760%27%20cy%3D%27430%27%20r%3D%278%27/%3E%0A%20%20%3Ccircle%20cx%3D%27980%27%20cy%3D%27520%27%20r%3D%277%27/%3E%3Ccircle%20cx%3D%271240%27%20cy%3D%27380%27%20r%3D%278%27/%3E%3Ccircle%20cx%3D%27300%27%20cy%3D%27260%27%20r%3D%277%27/%3E%0A%20%20%3Ccircle%20cx%3D%27760%27%20cy%3D%27220%27%20r%3D%278%27/%3E%3Ccircle%20cx%3D%271180%27%20cy%3D%27230%27%20r%3D%277%27/%3E%3Ccircle%20cx%3D%27790%27%20cy%3D%27360%27%20r%3D%278%27/%3E%0A%20%20%3Ccircle%20cx%3D%271260%27%20cy%3D%27300%27%20r%3D%277%27/%3E%0A%3C/g%3E%0A%3C/svg%3E');background-size:cover;background-position:center;opacity:.25;filter:blur(2px);z-index:0;transform:scale(1.04)}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,10,25,.85),rgba(10,20,40,.95));z-index:1}
-    .hero-overlay::after{content:'';position:absolute;inset:-20% -10%;background:radial-gradient(circle at 20% 30%,rgba(99,102,241,.20),transparent 42%),radial-gradient(circle at 80% 20%,rgba(37,99,235,.16),transparent 38%);animation:heroShift 20s linear infinite}
-    .hero-content{position:relative;z-index:2}
-    .hero h1{font-size:clamp(2.25rem,5vw,4.5rem);font-weight:900;line-height:1.02;max-width:900px;position:relative}
-    .hero h1::before{content:'';position:absolute;z-index:-1;left:-8%;top:-20%;width:60%;height:170%;background:radial-gradient(circle,rgba(99,102,241,.22),transparent 65%)}
-    @keyframes heroShift{0%{transform:translateX(0)}50%{transform:translateX(2%)}100%{transform:translateX(0)}}
-    .muted{color:var(--muted)}
-    .panel{background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 32px rgba(2,6,23,.32)}
-    .section{padding:4.5rem 0}
-    .service{padding:1.4rem;height:100%;transition:all .2s ease}.service:hover{transform:translateY(-5px);box-shadow:0 20px 35px rgba(2,6,23,.35)}
-    .kpi-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(15,23,42,.3)}
-    .proof-item{padding:1.1rem;border:1px solid var(--line);border-radius:12px;background:#0f1b31}
-    .footer{border-top:1px solid var(--line)}
-    @media (max-width:768px){.hero{padding:5.4rem 0 3.2rem}.hero .btn{width:100%}.hero-bg{filter:blur(1px)}}
-  </style>
+  <link href="assets/premium.css" rel="stylesheet" />
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">ESTECH</a>
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html"><span class="brand-mark">E</span>ESTECH</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="works.html">View Our Work</a></li>
-        <li class="nav-item"><a class="btn btn-main btn-sm ms-lg-2" href="contact.html">Get an Automation Audit</a></li>
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link " href="works.html">Case Studies</a></li>
+        <li class="nav-item"><a class="nav-link " href="ai-automation-for-saas.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="btn btn-main btn-sm ms-lg-2" href="contact.html">Calculate Savings</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
 <header class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="container hero-content">
-    <p class="text-uppercase small muted mb-2">AI Automation & Product Engineering Studio</p>
-    <h1>Replace Manual Operations with AI Systems That Work 24/7.</h1>
-    <p class="lead muted mt-3" style="max-width:760px">We design and deploy structured AI automation, autonomous workflows, and scalable internal tools for growth-focused teams.</p>
-    <div class="d-flex flex-wrap gap-3 mt-4">
-      <a href="contact.html" class="btn btn-main btn-lg">Get an Automation Audit</a>
-      <a href="works.html" class="btn btn-outline-light btn-lg">View Our Work</a>
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7 reveal">
+        <p class="eyebrow mb-3"><span class="pulse"></span> AI Operations Partner for Logistics & Supply Chain</p>
+        <h1 class="display-title">Reduce repetitive operations before they reduce your profit.</h1>
+        <p class="lead-xl mt-4">Estech helps logistics, haulage, freight forwarding, customs, and supply chain companies cut manual work, speed up response times, and see every operation clearly.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4"><a href="contact.html" class="btn btn-main btn-lg">Calculate My Savings</a><a href="#how" class="btn btn-outline-premium btn-lg">See How It Works</a></div>
+        <div class="row g-4 mt-5"><div class="col-6 col-md-4 metric"><strong>30–70%</strong><span class="muted">manual work reduction target after process fit</span></div><div class="col-6 col-md-4 metric"><strong>24/7</strong><span class="muted">customer and operations updates</span></div><div class="col-12 col-md-4 metric"><strong>2–6 wks</strong><span class="muted">typical first workflow rollout</span></div></div>
+      </div>
+      <div class="col-lg-5"><div class="ops-map reveal" aria-label="Animated operating workflow diagram">
+  <svg viewBox="0 0 640 540" aria-hidden="true">
+    <defs><linearGradient id="flowLine" x1="0" x2="1"><stop stop-color="#77c34f"/><stop offset="1" stop-color="#5cc8ff"/></linearGradient></defs>
+    <path class="flow" d="M74 190 C175 86 315 94 428 158 S570 296 472 394 216 444 118 318" fill="none" stroke="url(#flowLine)" stroke-width="3" opacity=".82" />
+    <path class="flow" d="M156 340 C244 254 318 250 430 304" fill="none" stroke="url(#flowLine)" stroke-width="2" opacity=".55" />
+    <circle class="node-dot" cx="74" cy="190" r="8" fill="#77c34f"/><circle class="node-dot" cx="315" cy="94" r="8" fill="#5cc8ff"/><circle class="node-dot" cx="570" cy="296" r="8" fill="#77c34f"/><circle class="node-dot" cx="216" cy="444" r="8" fill="#5cc8ff"/>
+  </svg>
+  <div class="ops-card o1">Shipment Request<small>captured once</small></div>
+  <div class="ops-card o2">Document Check<small>errors flagged</small></div>
+  <div class="ops-card o3">Customer Update<small>sent automatically</small></div>
+  <div class="ops-card o4">Manager Approval<small>only when needed</small></div>
+  <div class="ops-card o5">Live Status<small>visible to the team</small></div>
+</div></div>
     </div>
   </div>
 </header>
-
-<section class="section pt-0">
-  <div class="container">
-    <div class="panel p-4 p-md-5">
-      <h2 class="fw-bold">If Your Team Is Still Doing This Manually…</h2>
-      <ul class="muted mb-0">
-        <li>Manual approvals slowing execution</li>
-        <li>Repetitive reporting eating hours weekly</li>
-        <li>Data scattered across disconnected tools</li>
-        <li>Teams depending on spreadsheets</li>
-        <li>Operational bottlenecks blocking scale</li>
-      </ul>
+<main>
+  <section id="costs" class="section">
+    <div class="container">
+      <div class="row g-5 align-items-end mb-5"><div class="col-lg-7 reveal"><p class="eyebrow"><span class="pulse"></span> Why logistics companies lose money</p><h2 class="section-title">Profit leaks through manual follow-up, paperwork, and invisible delays.</h2></div><div class="col-lg-5 reveal"><p class="lead-xl">Most teams do not need more software. They need repetitive work removed from daily operations without disrupting the business.</p></div></div>
+      <div class="outcome-grid">
+        <article class="panel glass outcome-card span-7 reveal"><h3>Operations teams spend too much time chasing status.</h3><p class="muted">Shipment updates, driver follow-ups, customer messages, document checks, and internal approvals often depend on someone remembering the next step.</p></article>
+        <article class="panel outcome-card span-5 reveal"><h3>Errors become expensive.</h3><p class="muted">A missed document, wrong status, or late response can delay clearing, damage customer trust, and create avoidable rework.</p></article>
+        <article class="panel outcome-card span-4 reveal"><h3>Customers ask before your team can answer.</h3><p class="muted">When information is scattered, response times slow down.</p></article>
+        <article class="panel outcome-card span-4 reveal"><h3>Managers lack visibility.</h3><p class="muted">Bottlenecks stay hidden until they become urgent.</p></article>
+        <article class="panel outcome-card span-4 reveal"><h3>Growth adds headcount, not leverage.</h3><p class="muted">More shipments should not always mean more admin staff.</p></article>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="kpi-strip py-4">
-  <div class="container d-flex flex-wrap justify-content-between gap-3 text-center text-lg-start">
-    <span class="muted">24/7 Automated Systems</span>
-    <span class="muted">Modular AI Architecture</span>
-    <span class="muted">Production-Ready Deployments</span>
-    <span class="muted">Built for Growth-Focused Teams</span>
-  </div>
-</section>
-
-<section id="services" class="section">
-  <div class="container">
-    <div class="text-center mb-4"><h2 class="fw-bold">What We Engineer</h2></div>
-    <div class="row g-4">
-      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">AI Workflow Automation</h5><p class="muted mb-1">Structured automation of approvals and reporting.</p><p class="mb-0"><strong>Impact:</strong> Replace 10+ hours of manual weekly work.</p></div></div>
-      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">Autonomous Task Agents</h5><p class="muted mb-1">Deploy AI agents for defined internal operations.</p><p class="mb-0"><strong>Impact:</strong> Faster execution with governance controls.</p></div></div>
-      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">Intelligence Dashboards</h5><p class="muted mb-1">Turn scattered data into decision-grade visibility.</p><p class="mb-0"><strong>Impact:</strong> Reduce blind spots in critical workflows.</p></div></div>
-      <div class="col-md-6"><div class="panel service"><h5 class="fw-bold">Scalable Product Architecture</h5><p class="muted mb-1">Modular systems designed for long-term maintainability.</p><p class="mb-0"><strong>Impact:</strong> Avoid fragile automation debt.</p></div></div>
+  </section>
+  <section id="how" class="section">
+    <div class="container">
+      <div class="row g-5"><div class="col-lg-5 reveal"><p class="eyebrow"><span class="pulse"></span> How AI Operations work</p><h2 class="section-title">Digital workers complete routine business tasks automatically.</h2><p class="lead-xl">Estech starts with the operational outcome, then builds the automation layer behind it.</p></div><div class="col-lg-7"><div class="process-line panel glass p-5 reveal"><div class="step"><h4>Capture work once</h4><p class="muted">Requests, documents, shipment updates, and exceptions enter one structured flow.</p></div><div class="step"><h4>Remove repetitive admin</h4><p class="muted">Digital workers classify, route, summarize, update, and notify automatically.</p></div><div class="step"><h4>Keep people in control</h4><p class="muted">Managers approve exceptions, high-risk decisions, and customer-sensitive actions.</p></div><div class="step pb-0"><h4>Show the business what is happening</h4><p class="muted mb-0">Leaders see delays, throughput, response times, and workload in real time.</p></div></div></div></div>
     </div>
-  </div>
-</section>
-
-<section class="section pt-0">
+  </section>
+  <section id="roi" class="section">
+    <div class="container"><div class="panel glass p-5 reveal"><div class="row g-5 align-items-center"><div class="col-lg-6"><p class="eyebrow"><span class="pulse"></span> ROI Calculator</p><h2 class="section-title">Estimate the cost of repetitive work.</h2><p class="lead-xl">If 8 employees each lose 6 hours weekly to manual updates and paperwork, that is 192 hours every month before errors, delays, or lost customers are counted.</p></div><div class="col-lg-6"><div class="row g-3"><div class="col-6"><div class="panel p-4"><h3>192 hrs</h3><p class="muted mb-0">monthly admin time</p></div></div><div class="col-6"><div class="panel p-4"><h3>₦ value</h3><p class="muted mb-0">based on payroll cost</p></div></div><div class="col-12"><a href="contact.html" class="btn btn-main w-100">Request a savings estimate</a></div></div></div></div></div></div>
+  </section>
+  <section id="visibility" class="section">
+    <div class="container"><div class="row g-5 align-items-center"><div class="col-lg-6 reveal"><div class="compare"><div class="panel bad p-4"><h4>Traditional software</h4><p class="muted mb-0">Records information, but staff still chase updates, copy data, and manage exceptions manually.</p></div><div class="panel good p-4"><h4>Estech AI Operations</h4><p class="muted mb-0">Completes routine steps, escalates exceptions, and gives managers live operational visibility.</p></div></div></div><div class="col-lg-6 reveal"><p class="eyebrow"><span class="pulse"></span> Why traditional software fails</p><h2 class="section-title">Tools alone do not fix operations.</h2><p class="lead-xl">A system only creates leverage when it removes work, reduces errors, and makes the business easier to run.</p></div></div></div>
+  </section>
+  <section class="section-tight"><div class="container"><div class="panel glass p-5 text-center reveal"><p class="eyebrow justify-content-center"><span class="pulse"></span> Next Step</p><h2 class="section-title">Find your highest-value automation opportunity.</h2><p class="lead-xl mx-auto" style="max-width:780px">We review your current process, estimate time leakage, and recommend the first workflow to automate.</p><a href="contact.html" class="btn btn-main btn-lg">Start with an operations review</a></div></div></section>
+</main>
+<footer class="footer-premium">
   <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-6"><div class="panel p-4 h-100"><h4 class="fw-bold">Why Teams Choose Estech</h4><p class="mb-1"><strong>1. Structured Systems, Not Experiments</strong></p><p class="muted">Production-grade AI with governance and stability.</p><p class="mb-1"><strong>2. Built for Scale</strong></p><p class="muted">Every automation is designed to evolve with your team.</p><p class="mb-1"><strong>3. Long-Term Architecture</strong></p><p class="muted mb-0">No duct-tape workflows. Clean modular design.</p></div></div>
-      <div class="col-lg-6"><div class="panel p-4 h-100"><h4 class="fw-bold">Recent Systems Built</h4><div class="proof-item mb-2">Internal AI Workflow Engine</div><div class="proof-item mb-2">Autonomous Reporting Bot</div><div class="proof-item">Multi-Source Analytics Dashboard</div><p class="muted mt-3 mb-0">More service pages: <a href="ai-automation-for-saas.html">AI Automation for SaaS</a>, <a href="ai-workflow-systems.html">AI Workflow Systems</a>, <a href="ai-agents-for-operations.html">AI Agents for Operations</a>.</p></div></div>
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <a class="navbar-brand fw-bold d-flex align-items-center mb-3" href="index.html"><span class="brand-mark">E</span>ESTECH</a>
+        <p class="muted">AI Operations Partner for logistics, haulage, freight forwarding, customs, warehouse, and supply chain companies.</p>
+        <p class="small muted mb-0">Lagos, Nigeria · contact@estechsolutions.com</p>
+      </div>
+      <div class="col-6 col-lg-2"><h6>Outcomes</h6><a href="index.html#costs">Lower operating costs</a><a href="index.html#visibility">Operational visibility</a><a href="index.html#roi">ROI calculator</a></div>
+      <div class="col-6 col-lg-2"><h6>Industries</h6><a href="logistics-operations.html">Logistics</a><a href="haulage-automation.html">Haulage</a><a href="freight-forwarding.html">Freight Forwarding</a><a href="customs-broker-automation.html">Customs Brokers</a></div>
+      <div class="col-6 col-lg-2"><h6>Company</h6><a href="about.html">About</a><a href="works.html">Case Studies</a><a href="hire.html">Engagements</a><a href="contact.html">Contact</a></div>
+      <div class="col-6 col-lg-2"><h6>Legal</h6><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="https://github.com/estechsolutions">GitHub</a></div>
     </div>
-  </div>
-</section>
-
-<section class="section pt-0">
-  <div class="container">
-    <div class="panel p-4 p-md-5 text-center">
-      <h3 class="fw-bold">Ready to Replace Manual Operations?</h3>
-      <p class="muted">Book a systems consultation and get a clear technical roadmap for automation.</p>
-      <a href="contact.html" class="btn btn-main btn-lg">Analyze My Operations</a>
-      <p class="mt-3 mb-0"><a href="works.html">Or explore our systems →</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="section pt-0">
-  <div class="container"><div class="panel p-4"><h4 class="fw-bold">Leadership</h4><p class="mb-1"><strong>Emmanuel uchenna</strong></p><p class="muted mb-0">Founder & AI Product Engineer — focused on practical AI systems for real operational outcomes.</p></div></div>
-</section>
-
-<footer class="footer py-4">
-  <div class="container">
-    <div class="row g-3 align-items-start">
-      <div class="col-md-6"><p class="mb-1 fw-semibold">Estech Solutions</p><p class="small muted mb-0">Lagos, Nigeria</p><p class="small muted mb-0">Email: contact@estechsolutions.com</p></div>
-      <div class="col-md-6 text-md-end"><p class="small mb-1"><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a></p><p class="small mb-1"><a href="#">LinkedIn</a> • <a href="https://github.com/estechsolutions">GitHub</a></p><p class="small muted mb-0">&copy; <span id="year"></span> Estech Solutions. All rights reserved.</p></div>
-    </div>
+    <div class="border-top border-secondary mt-5 pt-4 small muted">&copy; <span id="year"></span> Estech Solutions. All rights reserved.</div>
   </div>
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/premium.js"></script>
 </body>
 </html>
