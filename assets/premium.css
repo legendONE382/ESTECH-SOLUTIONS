@@ -70,7 +70,7 @@ a:hover { color: #fff; }
 }
 .navbar.is-scrolled { background: rgba(5, 7, 11, 0.88) !important; box-shadow: var(--shadow-soft); }
 .navbar-brand { letter-spacing: 0.075em; }
-.brand-mark {
+.brand-mark-img {
   display: inline-grid;
   place-items: center;
   width: 34px;
