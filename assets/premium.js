@@ -8,6 +8,8 @@ const onScroll = () => {
 onScroll();
 addEventListener('scroll', onScroll, { passive: true });
 
+document.body.classList.add('page-loaded');
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -17,3 +19,39 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
 
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Mobile menu close on link click
+document.querySelectorAll('.navbar-collapse .nav-link').forEach((link) => {
+  link.addEventListener('click', () => {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+      if (bsCollapse) bsCollapse.hide();
+    }
+  });
+});
+
+// Active nav state
+addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname;
+  const page = path.split('/').pop() || 'index.html';
+  document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
