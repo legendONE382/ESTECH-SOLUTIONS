@@ -77,9 +77,7 @@ a:hover { color: #fff; }
   height: 34px;
   margin-right: 0.55rem;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--green), var(--green-2));
-  color: #071006;
-  font-weight: 950;
+  object-fit: contain;
 }
 .nav-link { color: #e7edf6 !important; font-weight: 760; position: relative; }
 .nav-link::after {
