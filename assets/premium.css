@@ -73,15 +73,15 @@ a:hover { color: #fff; }
   transition: background 260ms ease, box-shadow 260ms ease;
 }
 .navbar.is-scrolled { background: rgba(5, 7, 11, 0.88) !important; box-shadow: var(--shadow-soft); }
-.navbar-brand { letter-spacing: 0.075em; }
+.navbar-brand { letter-spacing: 0.075em; gap: 0.5rem; }
+.navbar { padding-top: 0.3rem; padding-bottom: 0.3rem; }
 .brand-mark-img {
-  display: inline-grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  margin-right: 0.55rem;
+  display: block;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 .nav-link { color: #e7edf6 !important; font-weight: 760; position: relative; }
 .nav-link::after {
