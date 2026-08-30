@@ -222,7 +222,8 @@ a:hover { color: #fff; }
   font-weight: 600;
   margin-top: 0.35rem;
 }
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 820ms var(--ease-out), transform 820ms var(--ease-out); }
+.reveal { opacity: 1; transform: none; transition: opacity 820ms var(--ease-out), transform 820ms var(--ease-out); }
+.js-ready .reveal { opacity: 0; transform: translateY(28px); }
 .reveal.is-visible { opacity: 1; transform: none; }
 
 .ops-map { position: relative; min-height: 610px; transform: translate3d(0, var(--parallax, 0), 0); }
@@ -405,7 +406,3 @@ a:hover { color: #fff; }
 }
 
 /* Smooth page load */
-.page-loaded .reveal {
-  opacity: 1;
-  transform: none;
-}
