@@ -41,6 +41,15 @@ if (!observer) {
   revealElements.forEach((element) => element.classList.add('is-visible'));
 }
 
+const loadReveal = () => {
+  document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => {
+    el.classList.add('is-visible');
+  });
+};
+
+addEventListener('load', loadReveal);
+setTimeout(loadReveal, 1200);
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', function (e) {
