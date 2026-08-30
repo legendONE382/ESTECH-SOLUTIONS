@@ -196,7 +196,34 @@ a:hover { color: #fff; }
 .glass { background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.025)); box-shadow: var(--shadow); }
 .metric { border-left: 1px solid var(--line); padding-left: 1.25rem; }
 .metric strong { display: block; font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -0.06em; }
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 820ms var(--ease-out), transform 820ms var(--ease-out); }
+.metrics-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.metric-card {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+}
+.metric-value {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 950;
+  letter-spacing: -0.06em;
+  color: var(--green-2);
+  line-height: 1;
+}
+.metric-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+.reveal { opacity: 1; transform: none; transition: opacity 820ms var(--ease-out), transform 820ms var(--ease-out); }
+.js-ready .reveal { opacity: 0; transform: translateY(28px); }
 .reveal.is-visible { opacity: 1; transform: none; }
 
 .ops-map { position: relative; min-height: 610px; transform: translate3d(0, var(--parallax, 0), 0); }
@@ -253,6 +280,7 @@ a:hover { color: #fff; }
   .display-title { font-size: 3.15rem; }
   .device-frame img { max-height: 360px; }
   .hero-image { min-height: 420px; }
+  .metrics-banner { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .section { padding: 4rem 0; }
