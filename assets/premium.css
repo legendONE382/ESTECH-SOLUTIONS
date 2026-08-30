@@ -406,7 +406,3 @@ a:hover { color: #fff; }
 }
 
 /* Smooth page load */
-.page-loaded .reveal {
-  opacity: 1;
-  transform: none;
-}
