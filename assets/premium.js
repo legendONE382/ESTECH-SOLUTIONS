@@ -8,17 +8,38 @@ const onScroll = () => {
 onScroll();
 addEventListener('scroll', onScroll, { passive: true });
 
+document.documentElement.classList.add('js-ready');
 document.body.classList.add('page-loaded');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('is-visible');
-    observer.unobserve(entry.target);
-  });
-}, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+const revealElements = document.querySelectorAll('.reveal');
+let observer = null;
 
-document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+try {
+  if ('IntersectionObserver' in window) {
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+  }
+} catch (e) {
+  observer = null;
+}
+
+revealElements.forEach((element) => {
+  if (observer) observer.observe(element);
+  const rect = element.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    element.classList.add('is-visible');
+    if (observer) observer.unobserve(element);
+  }
+});
+
+if (!observer) {
+  revealElements.forEach((element) => element.classList.add('is-visible'));
+}
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
